@@ -15,8 +15,8 @@
             </div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../view/index.php">
+                    <li class="nav-item" id="dash">
+                        <a class="nav-link" href="../view/index.php" >
                             <i class="material-icons">dashboard</i>
                             <p style="font-size: 15px;"> Dashboard</p>
                         </a>
@@ -26,19 +26,19 @@
                         <li class="header" style="margin-left: 15px; color:white; margin-top: 15px">
                             <strong>Accounts</strong>
                         </li>
-                        <li class="nav-item" style="margin-top:-15px;">
+                        <li class="nav-item" style="margin-top:-15px;" id="admin">
                             <a class="nav-link" href="../view/admin.php">
                                 <i class="material-icons" style="font-size: 25px;">account_box</i>
                                 <p>Admin</p>
                             </a>
                         </li>
-                        <li class="nav-item" style="margin-top:-25px;">
+                        <li class="nav-item" style="margin-top:-25px;" id="studenten">
                             <a class="nav-link" href="../view/studenten.php">
                                 <i class="material-icons" style="font-size: 25px;">perm_identity</i>
                                 <p>Studenten</p>
                             </a>
                         </li>
-                        <li class="nav-item" style="margin-top:-25px;">
+                        <li class="nav-item" style="margin-top:-25px;" id="docenten">
                             <a class="nav-link" href="../view/docenten.php">
                                 <i class="material-icons" style="font-size: 25px;">portrait</i>
                                 <p>Docenten</p>
@@ -46,14 +46,14 @@
                         </li>
                     </div>
 
-                    <li class="nav-item ">
-                        <a class="nav-link" href="../view/cijfers.php">
+                    <li class="nav-item " id="cijferlijst">
+                        <a class="nav-link" href="../view/cijfers.php" >
                             <i class="material-icons"> ballot</i>
                             <p>Cijfers</p>
                         </a>
                     </li>
 
-                    <li class="nav-item ">
+                    <li class="nav-item " id="documenten">
                         <a class="nav-link" href="../view/documenten.php">
                             <i class="material-icons">attachment</i>
                             <p>Documenten</p>
@@ -62,33 +62,33 @@
 
                     <div id="school">
                         <li class="header" style="margin-left: 10px; color:white; margin-top: 15px">
-                            <strong>School Logistics</strong>
+                            <strong>Logistics</strong>
                         </li>
-                        <li class="nav-item " style="margin-top:-15px;">
+                        <li class="nav-item " style="margin-top:-15px;" id="roosters">
                             <a class="nav-link" href="../view/rooster.php">
                                 <i class="material-icons">text_snippet</i>
                                 <p>Roosters</p>
                             </a>
                         </li>
-                        <li class="nav-item " style="margin-top:-25px;">
+                        <li class="nav-item " style="margin-top:-25px;" id="richting">
                             <a class="nav-link" href="../view/richtingen.php">
                                 <i class="material-icons">web_asset</i>
                                 <p>Richtingen</p>
                             </a>
                         </li>
-                        <li class="nav-item " style="margin-top:-25px;">
+                        <li class="nav-item " style="margin-top:-25px;" id="klas">
                             <a class="nav-link" href="../view/klassen.php">
                                 <i class="material-icons">list_alt</i>
                                 <p>klassen</p>
                             </a>
                         </li>
-                        <li class="nav-item " style="margin-top:-25px;">
+                        <li class="nav-item " style="margin-top:-25px;" id="formaties">
                             <a class="nav-link" href="../view/formaties.php">
                                 <i class="material-icons">assignment_ind</i>
                                 <p>klassen Formaties</p>
                             </a>
                         </li>
-                        <li class="nav-item " style="margin-top:-25px;">
+                        <li class="nav-item " style="margin-top:-25px;" id="vak">
                             <a class="nav-link" href="../view/vakken.php">
                                 <i class="material-icons">book</i>
                                 <p>Vakken</p>
@@ -98,12 +98,12 @@
 
                     </div>
 
-                    <li class="nav-item ">
+                    <!-- <li class="nav-item ">
                         <a class="nav-link" href="../view/settings.php">
                             <i class="material-icons">settings</i>
                             <p>Settings</p>
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>

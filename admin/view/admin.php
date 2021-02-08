@@ -60,5 +60,12 @@
                 </div>
             </div>
         </div>
-    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+
+        var element = document.getElementById("admin");
+        element.classList.add("active");
+    });
+</script>
     <?php include "../includes/scripts.php"; ?>

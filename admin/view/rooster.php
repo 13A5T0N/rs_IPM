@@ -49,4 +49,11 @@
             </div>
         </div>
     </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+
+        var element = document.getElementById("roosters");
+        element.classList.add("active");
+    });
+</script>
     <?php include "../includes/scripts.php"; ?>

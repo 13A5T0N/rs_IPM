@@ -11,12 +11,12 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
-                                <thead >
+                                <thead>
                                     <th>
                                         #
                                     </th>
                                     <th>
-                                       klas
+                                        klas
                                     </th>
                                     <th>
                                         vak
@@ -54,4 +54,11 @@
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            console.log("The page has a new hit!");
+            var element = document.getElementById("cijferlijst");
+            element.classList.add("active");
+        });
+    </script>
     <?php include "../includes/scripts.php"; ?>
