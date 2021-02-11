@@ -5,8 +5,10 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-success">
-                        <h4 class="card-title ">CIjfers</h4>
-                        <p class="card-category">Cijfers overzicht</p>
+                    <h4 class="card-title ">Cijfers Tabel</h4>
+                        <p class="card-category"><button type="button" class="btn btn-info" data-toggle="modal" data-target="#add">
+                                Cijfers Toevoegen
+                            </button></p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -54,11 +56,12 @@
             </div>
         </div>
     </div>
+   
+    <?php include "../includes/scripts.php"; 
+      include "../modals/cijfers_modal.php";?>
     <script>
         document.addEventListener("DOMContentLoaded", function(event) {
-            console.log("The page has a new hit!");
             var element = document.getElementById("cijferlijst");
             element.classList.add("active");
         });
     </script>
-    <?php include "../includes/scripts.php"; ?>

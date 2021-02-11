@@ -5,8 +5,10 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-success">
-                        <h4 class="card-title ">Simple Table</h4>
-                        <p class="card-category"> Here is a subtitle for this table</p>
+                        <h4 class="card-title ">Docent Tabel</h4>
+                        <p class="card-category"><button type="button" class="btn btn-info" data-toggle="modal" data-target="#add">
+                                Docent Toevoegen
+                            </button></p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -67,10 +69,14 @@
             </div>
         </div>
     </div>
+    <?php
+    include "../includes/scripts.php";
+    include "../modals/docent_modal.php";
+    ?>
     <script>
-    document.addEventListener("DOMContentLoaded", function(event) {
-        var element = document.getElementById("docenten");
-        element.classList.add("active");
-    });
-</script>
-    <?php include "../includes/scripts.php"; ?>
+        document.addEventListener("DOMContentLoaded", function(event) {
+
+            var element = document.getElementById("docenten");
+            element.classList.add("active");
+        });
+    </script>

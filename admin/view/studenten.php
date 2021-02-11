@@ -5,13 +5,15 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-success">
-                        <h4 class="card-title ">Simple Table</h4>
-                        <p class="card-category"> Here is a subtitle for this table</p>
+                        <h4 class="card-title ">Student Tabel</h4>
+                        <p class="card-category"><button type="button" class="btn btn-info" data-toggle="modal" data-target="#add">
+                                Student Toevoegen
+                            </button></p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
-                                <thead >
+                                <thead>
                                     <th>
                                         #
                                     </th>
@@ -55,7 +57,7 @@
                                             Actief
                                         </td>
                                         <td>
-                                        <a href="#"><i class="material-icons text-success">launch</i></a>
+                                            <a href="#"><i class="material-icons text-success">launch</i></a>
                                             <a href="#"><i class="material-icons text-info">edit</i></a>
                                             <a href="#"><i class="material-icons text-danger">delete</i></a>
                                         </td>
@@ -67,11 +69,15 @@
             </div>
         </div>
     </div>
-    <script>
-    document.addEventListener("DOMContentLoaded", function(event) {
 
-        var element = document.getElementById("studenten");
-        element.classList.add("active");
-    });
-</script>
-    <?php include "../includes/scripts.php"; ?>
+    <?php
+    include "../includes/scripts.php";
+    include "../modals/student_modal.php";
+    ?>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+
+            var element = document.getElementById("studenten");
+            element.classList.add("active");
+        });
+    </script>

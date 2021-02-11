@@ -5,13 +5,15 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-success">
-                        <h4 class="card-title ">Simple Table</h4>
-                        <p class="card-category"> Here is a subtitle for this table</p>
+                        <h4 class="card-title ">Admin Table</h4>
+                        <p class="card-category"><button type="button" class="btn btn-info" data-toggle="modal" data-target="#add">
+                                Admin Toevoegen
+                            </button></p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
-                                <thead >
+                                <thead>
                                     <th>
                                         #
                                     </th>
@@ -49,7 +51,7 @@
                                             Actief
                                         </td>
                                         <td>
-                                            <a href="#"><i class="material-icons text-success">launch</i></a>
+                                            <a href="#" class="edit"><i class="material-icons">launch</i></a>
                                             <a href="#"><i class="material-icons text-info">edit</i></a>
                                             <a href="#"><i class="material-icons text-danger">delete</i></a>
                                         </td>
@@ -60,12 +62,24 @@
                 </div>
             </div>
         </div>
-</div>
-<script>
-    document.addEventListener("DOMContentLoaded", function(event) {
+    </div>
+   
+    <?php
+    include "../includes/scripts.php";
+    include "../modals/admin_modal.php";
+    ?>
 
-        var element = document.getElementById("admin");
-        element.classList.add("active");
-    });
-</script>
-    <?php include "../includes/scripts.php"; ?>
+<script>
+        $(document).on('click', '.edit', function(e) {
+            console.log('test')
+            var id = $(this).data('id');
+            $('#edit').modal('show');
+        });
+        
+
+        document.addEventListener("DOMContentLoaded", function(event) {
+
+            var element = document.getElementById("admin");
+            element.classList.add("active");
+        });
+    </script>
