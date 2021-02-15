@@ -1,4 +1,8 @@
-<?php include "session.php"; ?>
+<?php
+include "../../config/db_conn.php";
+include "session.php";
+session_start();
+?>
 
 <body class="">
     <div class="wrapper">
@@ -16,7 +20,7 @@
             <div class="sidebar-wrapper">
                 <ul class="nav">
                     <li class="nav-item" id="dash">
-                        <a class="nav-link" href="../view/index.php" >
+                        <a class="nav-link" href="../view/index.php">
                             <i class="material-icons">dashboard</i>
                             <p style="font-size: 15px;"> Dashboard</p>
                         </a>
@@ -47,7 +51,7 @@
                     </div>
 
                     <li class="nav-item " id="cijferlijst">
-                        <a class="nav-link" href="../view/cijfers.php" >
+                        <a class="nav-link" href="../view/cijfers.php">
                             <i class="material-icons"> ballot</i>
                             <p>Cijfers</p>
                         </a>
