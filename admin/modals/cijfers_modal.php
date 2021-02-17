@@ -11,8 +11,11 @@ include "../includes/scripts.php";
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="form-group">
-                            <label for="" class="col-sm control-label">Student File</label>
-                            <input type="file" class="custom-file-input" id="customFile">
+                            <label for="" class="col-sm control-label">Cijfers File</label>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="customFileLang" lang="en">
+                                <label class="custom-file-label" for="customFileLang">Select file</label>
+                            </div>
                         </div>
                     </div>
                 </div>

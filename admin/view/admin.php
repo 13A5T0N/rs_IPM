@@ -1,5 +1,5 @@
-<?php 
-include "../includes/menubar.php"; 
+<?php
+include "../includes/menubar.php";
 include "../includes/errors.php";
 ?>
 <div class="content">
@@ -21,13 +21,13 @@ include "../includes/errors.php";
                                         #
                                     </th>
                                     <th>
-                                        Naam
-                                    </th>
-                                    <th>
                                         Voornaam
                                     </th>
                                     <th>
-                                        email
+                                        Naam
+                                    </th>
+                                    <th>
+                                        Status
                                     </th>
                                     <th>
                                         Acties
@@ -35,23 +35,24 @@ include "../includes/errors.php";
                                 </thead>
                                 <tbody>
                                     <?php
-                                        $sql = "SELECT * FROM admin";
-                                        $result = $conn->query($sql);
+                                    $sql = "SELECT * FROM admin";
+                                    $result = $conn->query($sql);
 
-                                        if ($result->num_rows > 0) {
-                                            // output data of each row
-                                            while ($row = $result->fetch_assoc()) {
+                                    if ($result->num_rows > 0) {
+                                        // output data of each row
+                                        while ($row = $result->fetch_assoc()) {
                                     ?>
                                             <tr>
-                                                <td><?php echo $row['admin_id'];?></td>
-                                                <td><?php echo $row['admin_naam'];?></td>
-                                                <td><?php echo $row['admin_voornaam'];?></td>
-                                                <td><?php echo $row['admin_email'];?></td>
+                                                <td><?php echo $row['admin_id']; ?></td>
+                                                <td><?php echo $row['admin_voornaam']; ?></td>
+                                                <td><?php echo $row['admin_naam']; ?></td>
+                                                <td><?php echo $row['admin_status']; ?></td>
                                                 <td>
-                                                    <a href="#" class="edit"><i class="material-icons">launch</i></a>
-                                                    <a href="#"><i class="material-icons text-info">edit</i></a>
-                                                    <a href="#"><i class="material-icons text-danger">delete</i></a>
+                                                    <a href="#" class="view" data-id="<?php echo $row['admin_id']; ?>"><i class="material-icons">launch</i></a>
+                                                    <a href="#" class="edit" data-id="<?php echo $row['admin_id']; ?>"><i class="material-icons text-info">edit</i></a>
+                                                    <!-- <a href="#" class="delete" data-id="<?php echo $row['admin_id']; ?>"><i class="material-icons text-danger">delete</i></a> -->
                                                 </td>
+                                            </tr>
                                         <?php
                                         }
                                     } else {
@@ -71,20 +72,53 @@ include "../includes/errors.php";
     <?php
     include "../includes/scripts.php";
     include "../modals/admin_modal.php";
-    
+
     ?>
 
     <script>
-        $(document).on('click', '.edit', function(e) {
-            console.log('test')
+        $(document).on('click', '.view', function(e) {
             var id = $(this).data('id');
-            $('#edit').modal('show');
+            $('#view').modal('show');
+            get_row(id);
         });
 
+        $(document).on('click', '.edit', function(e) {
+            var id = $(this).data('id');
+            $('#edit').modal('show');
+            get_row(id);
+        });
+
+        $(document).on('click', '.delete', function(e) {
+            var id = $(this).data('id');
+            $('#delete').modal('show');
+            get_row(id);
+        });
 
         document.addEventListener("DOMContentLoaded", function(event) {
 
             var element = document.getElementById("admin");
             element.classList.add("active");
         });
+
+        function get_row(id) {
+            $.ajax({
+                type: 'POST',
+                url: '../backend/get_admin.php',
+                data: {
+                    id: id
+                },
+                dataType: 'json',
+                success: function(response) {
+                    $('#view_naam').val(response.admin_naam);
+                    $('#view_voornaam').val(response.admin_voornaam);
+                    $('#veiw_email').val(response.admin_email);
+
+                    $('#edit_naam').val(response.admin_naam);
+                    $('#edit_voornaam').val(response.admin_voornaam);
+                    $('#edit_email').val(response.admin_email);
+                    $('#edit_id').val(response.admin_id)
+                    $('#status option[value=' + response.admin_status + ']').attr('selected', 'selected');
+                }
+            });
+        }
     </script>
