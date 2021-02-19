@@ -1,4 +1,5 @@
-<?php include "../includes/menubar.php"; ?>
+<?php include "../includes/menubar.php"; 
+include "../includes/errors.php";?>
 <div class="content">
     <div class="container-fluid">
         <div class="col-md-12">
@@ -24,44 +25,40 @@
                                         Voornaam
                                     </th>
                                     <th>
-                                        email
-                                    </th>
-                                    <th>
-                                        nummer
-                                    </th>
-                                    <th>
-                                        Status
-                                    </th>
-                                    <th>
                                         Acties
                                     </th>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            1
-                                        </td>
-                                        <td>
-                                            Dakota Rice
-                                        </td>
-                                        <td>
-                                            Niger
-                                        </td>
-                                        <td>
-                                            Oud-Turnhout
-                                        </td>
-                                        <td>
-                                            20
-                                        </td>
-                                        <td>
-                                            Actief
-                                        </td>
-                                        <td>
-                                            <a href="#"><i class="material-icons text-success">launch</i></a>
-                                            <a href="#"><i class="material-icons text-info">edit</i></a>
-                                            <a href="#"><i class="material-icons text-danger">delete</i></a>
-                                        </td>
-                                </tbody>
+                                    <?php
+                                    $sql = "SELECT * FROM docenten";
+                                    $result = $conn->query($sql);
+
+                                    if ($result->num_rows > 0) {
+                                        // output data of each row
+                                        while ($row = $result->fetch_assoc()) {
+                                            echo '<tr>
+                                           <td>
+                                               ' . $row['docent_id'] . '
+                                           </td>
+                                           <td>
+                                                ' . $row['docent_naam'] . '
+                                           </td>
+                                           <td>
+                                                ' . $row['docent_voornaam'] . '
+                                           </td>
+                                           <td>
+                                               <a href="#" data-id =" ' . $row['docent_id'] . '"><i class="material-icons text-success">launch</i></a>
+                                               <a href="#" data-id =" ' . $row['docent_id'] . '" ><i class="material-icons text-info">edit</i></a>
+                                               <a href="#" data-id =" ' . $row['docent_id'] . '"><i class="material-icons text-danger">delete</i></a>
+                                           </td>
+                                       </tr>';
+                                        }
+                                    } else {
+                                        echo "0 results";
+                                    }
+                                    ?>
+
+                                </tbody data-id>
                             </table>
                         </div>
                     </div>

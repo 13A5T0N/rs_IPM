@@ -1,4 +1,5 @@
-<?php include "../includes/menubar.php"; ?>
+<?php include "../includes/menubar.php"; 
+include "../includes/errors.php";?>
 <div class="content">
     <div class="container-fluid">
         <div class="col-md-12">

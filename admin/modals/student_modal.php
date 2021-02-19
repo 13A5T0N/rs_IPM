@@ -2,14 +2,14 @@
 include "../includes/scripts.php";
 ?>
 <!-- add Modal -->
-<div class="modal fade" id="add" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-color="green" data-background-color="black">
+<div class="modal fade" id="add" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-color="green" data-background-color="black">0
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
                 <div class="row">
                     <div class="col-2">
                         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Add</a>
+                            <a class="nav-link text-black active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Add</a>
                             <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">import</a>
 
                         </div>
@@ -23,18 +23,18 @@ include "../includes/scripts.php";
                                 <!-- personal info -->
                                 <div class="row">
                                     <div class="col-sm-6">
-                                    <form action="" method="post">
-                                        <h10 class="col-sm control-label">Persoonlijke Info<span style="color: red;">*</span></h10>
-                                        <br>
-                                        <div class="form-group">
-                                            <label for="" class="col-sm control-label">Student Naam</label>
-                                            <input type="text" class="form-control" id="" name="" class="" required>
-                                        </div>
+                                        <form action="../backend/add_student.php" method="post" autocomplete="off">
+                                            <h10 class="col-sm control-label">Persoonlijke Info<span style="color: red;">*</span></h10>
+                                            <br>
+                                            <div class="form-group">
+                                                <label for="" class="col-sm control-label">Student Naam</label>
+                                                <input type="text" class="form-control" id="" name="naam" required>
+                                            </div>
                                     </div>
                                     <div class="col-sm-6" style="margin-top: 24px;">
                                         <div class="form-group">
                                             <label for="" class="col-sm control-label">Student Voornaam</label>
-                                            <input type="text" class="form-control" id="" name="" class="" required>
+                                            <input type="text" class="form-control" id="" name="voornaam" required>
                                         </div>
                                     </div>
                                 </div>
@@ -42,18 +42,17 @@ include "../includes/scripts.php";
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="" class="col-sm control-label">leeftijd</label>
-                                            <input type="text" class="form-control" id="" name="" class="" required>
+                                            <input type="text" class="form-control" id="" name="leeftijd" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="" class="col-sm control-label">Woon adres</label>
-                                            <input type="text" class="form-control" id="" name="" class="" required>
+                                            <input type="text" class="form-control" id="" name="woon" required>
                                         </div>
                                     </div>
 
                                 </div>
-                                <hr class="bg-dark col-12">
                                 <!-- contact info -->
                                 <div class="row">
                                     <br><br>
@@ -62,13 +61,13 @@ include "../includes/scripts.php";
                                         <br>
                                         <div class="form-group">
                                             <label for="" class="col-sm control-label">Tel nummer</label>
-                                            <input type="text" class="form-control" id="" name="" class="" required>
+                                            <input type="text" class="form-control" id="" name="tel" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-6" style="margin-top: 24px;">
                                         <div class="form-group">
                                             <label for="" class="col-sm control-label">Email</label>
-                                            <input type="text" class="form-control" id="" name="" class="" required>
+                                            <input type="text" class="form-control" id="" name="email" required>
                                         </div>
                                     </div>
                                 </div>
@@ -81,13 +80,13 @@ include "../includes/scripts.php";
                                         <br>
                                         <div class="form-group">
                                             <label for="" class="col-sm control-label">naam</label>
-                                            <input type="text" class="form-control" id="" name="" class="">
+                                            <input type="text" class="form-control" id="" name="emergency_naam">
                                         </div>
                                     </div>
                                     <div class="col-sm-6" style="margin-top: 24px;">
                                         <div class="form-group">
                                             <label for="" class="col-sm control-label">Relatie</label>
-                                            <input type="text" class="form-control" id="" name="" class="" required>
+                                            <input type="text" class="form-control" id="" name="emergency_relatie">
                                         </div>
                                     </div>
                                 </div>
@@ -96,17 +95,21 @@ include "../includes/scripts.php";
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="" class="col-sm control-label">Tel nummer</label>
-                                            <input type="text" class="form-control" id="" name="" class="" required>
+                                            <input type="text" class="form-control" id="" name="emergency_nummer">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <label for="" class="col-sm control-label">Email</label>
-                                            <input type="text" class="form-control" id="" name="" class="" required>
+                                            <input type="text" class="form-control" id="" name="emergency_email">
                                         </div>
                                     </div>
                                 </div>
-                                
+                                <div class="row">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-success" style="margin-left: 20px;">Save</button>
+                                    </form>
+                                </div>
                             </div>
 
                             <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
@@ -119,7 +122,7 @@ include "../includes/scripts.php";
                                             <input type="file" class="custom-file-input" id="customFileLang" lang="en">
                                             <label class="custom-file-label" for="customFileLang">Select file</label>
                                         </div>
-                                        </form>
+
                                     </div>
                                 </div>
                             </div>
@@ -128,9 +131,217 @@ include "../includes/scripts.php";
                 </div>
 
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-success">Save changes</button>
+
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+
+
+<!-- view Modal -->
+<div class="modal fade" id="view">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h4 class="text-center">Voeg nieuw student</h4>
+                <hr class="bg-dark col-10">
+                <!-- personal info -->
+                <form action="#" method="post" autocomplete="off" >
+                    <!-- personal info -->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <form action="#" method="post" autocomplete="off">
+                                <h10 class="col-sm control-label"><strong>Persoonlijke Info</strong></h10>
+                                <br>
+                                <div class="form-group">
+                                    <label for="" class="col-sm control-label">Student Naam</label>
+                                    <input type="text" class="form-control" id="view_naam" name="naam"  class="text-center" readonly>
+                                </div>
+                        </div>
+                        <div class="col-sm-6" style="margin-top: 24px;">
+                            <div class="form-group">
+                                <label for="" class="col-sm control-label">Student Voornaam</label>
+                                <input type="text" class="form-control" id="view_voornaam" name="voornaam" class="text-center" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="" class="col-sm control-label">leeftijd</label>
+                                <input type="text" class="form-control" id="view_leefijd" name="leeftijd"  class="text-center"readonly>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="" class="col-sm control-label">Woon adres</label>
+                                <input type="text" class="form-control" id="view_adres" name="woon" class="text-center" readonly>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- contact info -->
+                    <div class="row">
+                        <br><br>
+                        <div class="col-sm-6">
+                            <h10 class="col-sm control-label"><strong>Contact Info</strong></h10>
+                            <br>
+                            <div class="form-group">
+                                <label for="" class="col-sm control-label">Tel nummer</label>
+                                <input type="text" class="form-control" id="view_tel" name="tel"  class="text-center" readonly>
+                            </div>
+                        </div>
+                        <div class="col-sm-6" style="margin-top: 24px;">
+                            <div class="form-group">
+                                <label for="" class="col-sm control-label">Email</label>
+                                <input type="text" class="form-control" id="view_email" name="email" class="text-center" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="bg-dark col-12">
+                    <!-- Emergency info -->
+                    <div class="row">
+                        <br><br>
+                        <div class="col-sm-6">
+                            <h10 class="col-sm control-label"><strong>Emergency Info</strong></h10>
+                            <br>
+                            <div class="form-group">
+                                <label for="" class="col-sm control-label">naam</label>
+                                <input type="text" class="form-control" id="view_em_naam" class="text-center" name="emergency_naam" readonly>
+                            </div>
+                        </div>
+                        <div class="col-sm-6" style="margin-top: 24px;">
+                            <div class="form-group">
+                                <label for="" class="col-sm control-label">Relatie</label>
+                                <input type="text" class="form-control" id="view_em_relatie" class="text-center" name="emergency_relatie" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <br><br>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="" class="col-sm control-label">Tel nummer</label>
+                                <input type="text" class="form-control" id="view_em_tel" class="text-center" name="emergency_nummer" readonly>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="" class="col-sm control-label">Email</label>
+                                <input type="text" class="form-control" id="view_em_email" class="text-center" name="emergency_email" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                </form>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- view Modal -->
+<div class="modal fade" id="edit">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h4 class="text-center">Voeg nieuw student</h4>
+                <hr class="bg-dark col-10">
+                <!-- personal info -->
+                <form action="#" method="post" autocomplete="off" >
+                    <!-- personal info -->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <form action="../backend/edit_student.php" method="post" autocomplete="off">
+                                <h10 class="col-sm control-label"><strong>Persoonlijke Info</strong></h10>
+                                <br>
+                                <div class="form-group">
+                                    <label for="" class="col-sm control-label">Student Naam</label>
+                                    <input type="text" class="form-control" id="edit_naam" name="naam"  class="text-center" >
+                                </div>
+                        </div>
+                        <div class="col-sm-6" style="margin-top: 24px;">
+                            <div class="form-group">
+                                <label for="" class="col-sm control-label">Student Voornaam</label>
+                                <input type="text" class="form-control" id="edit_voornaam" name="voornaam" class="text-center" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="" class="col-sm control-label">leeftijd</label>
+                                <input type="text" class="form-control" id="edit_leefijd" name="leeftijd"  class="text-center">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="" class="col-sm control-label">Woon adres</label>
+                                <input type="text" class="form-control" id="edit_adres" name="woon" class="text-center" >
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- contact info -->
+                    <div class="row">
+                        <br><br>
+                        <div class="col-sm-6">
+                            <h10 class="col-sm control-label"><strong>Contact Info</strong></h10>
+                            <br>
+                            <div class="form-group">
+                                <label for="" class="col-sm control-label">Tel nummer</label>
+                                <input type="text" class="form-control" id="edit_tel" name="tel"  class="text-center" >
+                            </div>
+                        </div>
+                        <div class="col-sm-6" style="margin-top: 24px;">
+                            <div class="form-group">
+                                <label for="" class="col-sm control-label">Email</label>
+                                <input type="text" class="form-control" id="edit_email" name="email" class="text-center" >
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="bg-dark col-12">
+                    <!-- Emergency info -->
+                    <div class="row">
+                        <br><br>
+                        <div class="col-sm-6">
+                            <h10 class="col-sm control-label"><strong>Emergency Info</strong></h10>
+                            <br>
+                            <div class="form-group">
+                                <label for="" class="col-sm control-label">naam</label>
+                                <input type="text" class="form-control" id="edit_em_naam" class="text-center" name="emergency_naam" >
+                            </div>
+                        </div>
+                        <div class="col-sm-6" style="margin-top: 24px;">
+                            <div class="form-group">
+                                <label for="" class="col-sm control-label">Relatie</label>
+                                <input type="text" class="form-control" id="edit_em_relatie" class="text-center" name="emergency_relatie" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <br><br>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="" class="col-sm control-label">Tel nummer</label>
+                                <input type="text" class="form-control" id="edit_em_tel" class="text-center" name="emergency_nummer" >
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="" class="col-sm control-label">Email</label>
+                                <input type="text" class="form-control" id="edit_em_email" class="text-center" name="emergency_email" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                </form>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

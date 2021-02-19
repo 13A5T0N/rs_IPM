@@ -1,4 +1,6 @@
-<?php include "../includes/menubar.php"; ?>
+<?php include "../includes/menubar.php";
+include "../includes/errors.php"; ?>
+
 <div class="content">
     <div class="container-fluid">
         <div class="col-md-12">
@@ -30,37 +32,37 @@
                                         leeftijd
                                     </th>
                                     <th>
-                                        Status
-                                    </th>
-                                    <th>
                                         Acties
                                     </th>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            1
-                                        </td>
-                                        <td>
-                                            Dakota Rice
-                                        </td>
-                                        <td>
-                                            Niger
-                                        </td>
-                                        <td>
-                                            Oud-Turnhout
-                                        </td>
-                                        <td>
-                                            20
-                                        </td>
-                                        <td>
-                                            Actief
-                                        </td>
-                                        <td>
-                                            <a href="#"><i class="material-icons text-success">launch</i></a>
-                                            <a href="#"><i class="material-icons text-info">edit</i></a>
-                                            <a href="#"><i class="material-icons text-danger">delete</i></a>
-                                        </td>
+                                    <?php
+                                    $sql = "SELECT * FROM studenten";
+                                    $result = $conn->query($sql);
+
+                                    if ($result->num_rows > 0) {
+                                        // output data of each row
+                                        while ($row = $result->fetch_assoc()) {
+                                    ?>
+                                            <tr>
+                                                <td><?php echo $row['student_nr']; ?></td>
+                                                <td><?php echo $row['student_voornaam']; ?></td>
+                                                <td><?php echo $row['student_naam']; ?></td>
+                                                <td><?php echo $row['student_email']; ?></td>
+                                                <td><?php echo $row['student_leeftijd']; ?></td>
+                                                <td>
+                                                    <a href="#" class="view" data-id="<?php echo $row['student_nr']; ?>"><i class="material-icons">launch</i></a>
+                                                    <a href="#" class="edit" data-id="<?php echo $row['student_nr']; ?>"><i class="material-icons text-info">edit</i></a>
+                                                    <!-- <a href="#" class="delete" data-id="<?php echo $row['student_nr']; ?>"><i class="material-icons text-danger">delete</i></a> -->
+                                                </td>
+                                            </tr>
+                                        <?php
+                                        }
+                                    } else {
+                                        echo "0 results";
+                                    }
+                                        ?>
+
                                 </tbody>
                             </table>
                         </div>
@@ -80,4 +82,51 @@
             var element = document.getElementById("studenten");
             element.classList.add("active");
         });
+
+        $(document).on('click', '.view', function(e) {
+            var id = $(this).data('id');
+            $('#view').modal('show');
+            get_row(id);
+        });
+
+        $(document).on('click', '.edit', function(e) {
+            var id = $(this).data('id');
+            $('#edit').modal('show');
+            get_row(id);
+        });
+        function get_row(id) {
+            $.ajax({
+                type: 'POST',
+                url: '../backend/get_student.php',
+                data: {
+                    id: id
+                },
+                dataType: 'json',
+                success: function(response) {
+                    
+                    $('#view_naam').val(response.student_naam);
+                    $('#view_voornaam').val(response.student_voornaam);
+                    $('#view_leefijd').val(response.student_leeftijd);
+                    $('#view_adres').val(response.student_adres);
+                    $('#view_tel').val(response.student_tel);
+                    $('#view_email').val(response.student_email);
+                    $('#view_em_naam').val(response.student_emergency_contact);
+                    $('#view_em_relatie').val(response.student_emergency_relatie);
+                    $('#view_em_tel').val(response.student_emergency_nummer);
+                    $('#view_em_email').val(response.student_emergency_email);
+                    
+
+                    $('#edit_naam').val(response.student_naam);
+                    $('#edit_voornaam').val(response.student_voornaam);
+                    $('#edit_leefijd').val(response.student_leeftijd);
+                    $('#edit_adres').val(response.student_adres);
+                    $('#edit_tel').val(response.student_tel);
+                    $('#edit_email').val(response.student_email);
+                    $('#edit_em_naam').val(response.student_emergency_contact);
+                    $('#edit_em_relatie').val(response.student_emergency_relatie);
+                    $('#edit_em_tel').val(response.student_emergency_nummer);
+                    $('#edit_em_email').val(response.student_emergency_email);
+                }
+            });
+        }
     </script>

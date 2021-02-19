@@ -1,4 +1,5 @@
-<?php include "../includes/menubar.php"; ?>
+<?php include "../includes/menubar.php"; 
+include "../includes/errors.php";?>
 <script>
         document.addEventListener("DOMContentLoaded", function(event) {
 
