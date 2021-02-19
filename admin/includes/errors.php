@@ -3,7 +3,7 @@ if (isset($_SESSION['error'])) {
   echo "
       <div class='alert alert-danger alert-dismissible' role='alert' style ='margin-top:45%; margin-left:85%;'>
         <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-        <h4><i class='icon fa fa-warning'></i> Error!</h4>
+        <h3><i class='icon fa fa-warning' style ='color: white;></i> Error!</h3>
         " . $_SESSION['error'] . "
       </div>
     ";
@@ -13,7 +13,7 @@ if (isset($_SESSION['success'])) {
   echo "
     <div class='alert alert-success alert-dismissible' role='alert' style ='margin-top:45%; margin-left:85%;'>
         <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-        <h4><i class='icon fa fa-check'></i> Toegevoegd</h4>
+        <h3><i class='icon fa fa-check' style ='color: white;></i> Toegevoegd</h3>
         " . $_SESSION['success'] . "
       </div>
     ";
@@ -23,7 +23,7 @@ if (isset($_SESSION['warning'])) {
   echo "
       <div class='alert alert-warning alert-dismissible' role='alert' style ='margin-top:45%; margin-left:85%;'>
         <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
-        <h4><i class='icon fa fa-check'></i> Deleted!</h4>
+        <h3><i class='icon fa fa-check' style ='color: white;></i> Deleted!</h3>
         " . $_SESSION['warning'] . "
       </div>
     ";
