@@ -4,21 +4,18 @@ create table ipm.admin(
 admin_id int primary key auto_increment,
 admin_voornaam varchar(100),
 admin_naam varchar(100),
-admin_emacreate table ipm.admin(
-admin_id int primary key auto_increment,
-admin_voornaam varchar(100),
-admin_naam varchar(100),
 admin_status varchar(50) default 'actief',
 admin_email varchar(50),
 admin_pwd text default '$argon2i$v=19$m=65536,t=4,p=1$eGdsWW5GZElVSE83ZmpYaw$Hq/kEc+fRfCfzWwjrWXI40hu04P2BQT0neU86OW3wKo'
-);il varchar(50),
-admin_pwd varchar(255)
 );
 
 create table ipm.log(
 log_id int auto_increment primary key, 
 log_action varchar(50),
-log_date datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+admin int,
+log_date datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+constraint FK_admin_log foreign key (admin) references admin(admin_id) on delete cascade
 );
 
 create table ipm.studenten(
@@ -34,4 +31,37 @@ student_emergency_contact varchar(50),
 student_emergency_relatie varchar(50),
 student_emergency_nummer varchar(50),
 student_emergency_email varchar(50)
+);
+
+create table ipm.docenten(
+docent_id int primary key auto_increment,
+docent_naam varchar(50),
+docent_voornaam varchar(50),
+docent_tel varchar(50),
+docent_email varchar(50)
+);
+
+create table ipm.richting(
+richting_id int primary key auto_increment,
+richting_naam varchar(50),
+richting_afkorting varchar(20)
+);
+
+create table ipm.vak(
+vak_id int primary key auto_increment,
+vak_naam varchar(50),
+vak_afkorting varchar(20),
+vak_jaar int(5),
+vak_richting int(10),
+
+constraint FK_cak_richting foreign key (vak_richting) references richting(richting_id)
+);
+
+create table ipm.klassen(
+klas_id int primary key auto_increment,
+klas_naam varchar(50),
+klas_richting int,
+klas_jaar int, 
+
+constraint klas_richting foreign key (klas_richting) references richting(richting_id)
 );
