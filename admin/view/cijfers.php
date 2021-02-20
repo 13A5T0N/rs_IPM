@@ -1,12 +1,12 @@
-<?php include "../includes/menubar.php"; 
-include "../includes/errors.php";?>
+<?php include "../includes/menubar.php";
+include "../includes/errors.php"; ?>
 <div class="content">
     <div class="container-fluid">
         <div class="col-md-12">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-success">
-                    <h4 class="card-title ">Cijfers Tabel</h4>
+                        <h4 class="card-title ">Cijfers Tabel</h4>
                         <p class="card-category"><button type="button" class="btn btn-info" data-toggle="modal" data-target="#add">
                                 Cijfers Toevoegen
                             </button></p>
@@ -57,9 +57,9 @@ include "../includes/errors.php";?>
             </div>
         </div>
     </div>
-   
-    <?php include "../includes/scripts.php"; 
-      include "../modals/cijfers_modal.php";?>
+
+    <?php include "../includes/scripts.php";
+    include "../modals/cijfers_modal.php"; ?>
     <script>
         document.addEventListener("DOMContentLoaded", function(event) {
             var element = document.getElementById("cijferlijst");
