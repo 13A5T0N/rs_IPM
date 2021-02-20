@@ -50,7 +50,7 @@ include "../includes/errors.php";
                                                 <td>
                                                     <a href="#" class="view" data-id="<?php echo $row['admin_id']; ?>"><i class="material-icons">launch</i></a>
                                                     <a href="#" class="edit" data-id="<?php echo $row['admin_id']; ?>"><i class="material-icons text-info">edit</i></a>
-                                                    <!-- <a href="#" class="delete" data-id="<?php echo $row['admin_id']; ?>"><i class="material-icons text-danger">delete</i></a> -->
+                                                    <a href="#" class="delete" data-id="<?php echo $row['admin_id']; ?>"><i class="material-icons text-danger">delete</i></a>
                                                 </td>
                                             </tr>
                                         <?php
@@ -68,6 +68,32 @@ include "../includes/errors.php";
             </div>
         </div>
     </div>
+
+<!-- delete Modal -->
+<div class="modal fade" id="delete">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h4 class="text-center">Vewijder Admin account</h4>
+                <hr class="bg-dark col-10">
+                <!-- personal info -->
+                <form action="../backend/delete/delete_admin.php" method="post" autocomplete="off">
+                    <div class="row">
+                        <div class="col-sm-6 ">
+                            <h3 class="text-center"><strong>Bent u zeker</strong> </h3>
+                            <input type="hidden" name="delete_id" id="delete_id">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-warning" name="add">delete</button>
+                </form>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
 
     <?php
     include "../includes/scripts.php";
@@ -105,7 +131,7 @@ include "../includes/errors.php";
                 type: 'POST',
                 url: '../backend/get_admin.php',
                 data: {
-                    id: id
+                    id: id   
                 },
                 dataType: 'json',
                 success: function(response) {
@@ -118,6 +144,8 @@ include "../includes/errors.php";
                     $('#edit_email').val(response.admin_email);
                     $('#edit_id').val(response.admin_id)
                     $('#status option[value=' + response.admin_status + ']').attr('selected', 'selected');
+
+                    $('#delete_id').val(response.admin_id)
                 }
             });
         }
