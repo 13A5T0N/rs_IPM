@@ -53,7 +53,7 @@ include "../includes/errors.php"; ?>
                                                 <td>
                                                     <a href="#" class="view" data-id="<?php echo $row['student_nr']; ?>"><i class="material-icons">launch</i></a>
                                                     <a href="#" class="edit" data-id="<?php echo $row['student_nr']; ?>"><i class="material-icons text-info">edit</i></a>
-                                                    <!-- <a href="#" class="delete" data-id="<?php echo $row['student_nr']; ?>"><i class="material-icons text-danger">delete</i></a> -->
+                                                    <a href="#" class="delete" data-id="<?php echo $row['student_nr']; ?>"><i class="material-icons text-danger">delete</i></a>
                                                 </td>
                                             </tr>
                                         <?php
@@ -72,6 +72,32 @@ include "../includes/errors.php"; ?>
         </div>
     </div>
 
+<!-- delete Modal -->
+<div class="modal fade" id="delete">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h4 class="text-center">Vewijder student account</h4>
+                <hr class="bg-dark col-10">
+                <!-- personal info -->
+                <form action="../backend/delete/delete_student.php" method="post" autocomplete="off">
+                    <div class="row">
+                        <div class="col-sm-6 ">
+                            <h3 class="text-center"><strong>Bent u zeker</strong> </h3>
+                            <input type="hidden" name="delete_id" id="delete_id">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-warning" name="add">delete</button>
+                </form>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
     <?php
     include "../includes/scripts.php";
     include "../modals/student_modal.php";
@@ -81,6 +107,12 @@ include "../includes/errors.php"; ?>
 
             var element = document.getElementById("studenten");
             element.classList.add("active");
+        });
+
+        $(document).on('click', '.delete', function(e) {
+            var id = $(this).data('id');
+            $('#delete').modal('show');
+            get_row(id);
         });
 
         $(document).on('click', '.view', function(e) {
@@ -115,7 +147,7 @@ include "../includes/errors.php"; ?>
                     $('#view_em_tel').val(response.student_emergency_nummer);
                     $('#view_em_email').val(response.student_emergency_email);
                     
-
+                    $('#edit_id').val(response.student_nr);
                     $('#edit_naam').val(response.student_naam);
                     $('#edit_voornaam').val(response.student_voornaam);
                     $('#edit_leefijd').val(response.student_leeftijd);
@@ -126,6 +158,8 @@ include "../includes/errors.php"; ?>
                     $('#edit_em_relatie').val(response.student_emergency_relatie);
                     $('#edit_em_tel').val(response.student_emergency_nummer);
                     $('#edit_em_email').val(response.student_emergency_email);
+
+                    $('#delete_id').val(response.student_nr);
                 }
             });
         }
