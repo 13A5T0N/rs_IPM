@@ -1,5 +1,5 @@
 <?php
-include "../../config/db_conn.php";
+include "../../../config/db_conn.php";
 session_start();
 
 function insert_vak($naam,$afkorting,$conn,$jaar,$richting){
@@ -20,4 +20,4 @@ $jaar = mysqli_real_escape_string($conn,$_POST['jaar']);
 $richting = mysqli_real_escape_string($conn,$_POST['richting']);
 
 insert_vak($naam,$afkorting,$conn,$jaar,$richting);
-header("location:../view/vakken.php");
+header("location:../../view/vakken.php");

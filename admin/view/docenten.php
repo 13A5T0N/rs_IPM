@@ -54,7 +54,7 @@ include "../includes/errors.php"; ?>
                                        </tr>';
                                         }
                                     } else {
-                                        echo "0 results";
+                                        
                                     }
                                     ?>
 
@@ -75,7 +75,7 @@ include "../includes/errors.php"; ?>
                     <h4 class="text-center">Vewijder Admin account</h4>
                     <hr class="bg-dark col-10">
                     <!-- personal info -->
-                    <form action="../backend/delete/delete_admin.php" method="post" autocomplete="off">
+                    <form action="../backend/delete/delete_docent.php" method="post" autocomplete="off">
                         <div class="row">
                             <div class="col-sm-6 ">
                                 <h3 class="text-center"><strong>Bent u zeker</strong> </h3>
@@ -131,17 +131,19 @@ include "../modals/docent_modal.php";
             },
             dataType: 'json',
             success: function(response) {
-                $('#view_naam').val(response.admin_naam);
-                $('#view_voornaam').val(response.admin_voornaam);
-                $('#veiw_email').val(response.admin_email);
+                $('#view_naam').val(response.docent_naam);
+                $('#view_voornaam').val(response.docent_voornaam);
+                $('#view_email').val(response.docent_email);
+                $('#view_tel').val(response.docent_tel);
 
-                $('#edit_naam').val(response.admin_naam);
-                $('#edit_voornaam').val(response.admin_voornaam);
-                $('#edit_email').val(response.admin_email);
-                $('#edit_id').val(response.admin_id)
-                $('#status option[value=' + response.admin_status + ']').attr('selected', 'selected');
+                $('#edit_naam').val(response.docent_naam);
+                $('#edit_voornaam').val(response.docent_voornaam);
+                $('#edit_email').val(response.docent_email);
+                $('#edit_id').val(response.docent_id)
+                $('#edit_tel').val(response.docent_tel);
 
-                $('#delete_id').val(response.admin_id)
+
+                $('#delete_id').val(response.docent_id)
             }
         });
     }

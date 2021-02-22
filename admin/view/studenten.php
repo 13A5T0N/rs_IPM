@@ -59,7 +59,7 @@ include "../includes/errors.php"; ?>
                                         <?php
                                         }
                                     } else {
-                                        echo "0 results";
+    
                                     }
                                         ?>
 

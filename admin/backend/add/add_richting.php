@@ -1,5 +1,5 @@
 <?php
-include "../../config/db_conn.php";
+include "../../../config/db_conn.php";
 session_start();
 
 function insert_richting($naam,$afkorting,$conn){
@@ -18,4 +18,4 @@ $naam = mysqli_real_escape_string($conn,$_POST['naam']);
 $afkorting = mysqli_real_escape_string($conn,$_POST['afkoritng']);
 
 insert_richting($naam,$afkorting,$conn);
-header("location:../view/richtingen.php");
+header("location:../../view/richtingen.php");
