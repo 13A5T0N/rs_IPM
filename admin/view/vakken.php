@@ -7,7 +7,7 @@ include "../includes/errors.php"; ?>
                 <div class="card">
                     <div class="card-header card-header-success">
                         <h4 class="card-title ">Vakken Tabel</h4>
-                        <p class="card-category"><button type="button" class="btn btn-info" data-toggle="modal" data-target="#add">
+                        <p class="card-category"><button type="button" id="add" class="btn btn-info" data-toggle="modal" data-target="#add">
                                 Vak Toevoegen
                             </button></p>
                     </div>
@@ -98,6 +98,13 @@ include "../modals/vak_modal.php"; ?>
         var element = document.getElementById("vak");
         element.classList.add("active");
     });
+
+    $(document).on('click', '.add', function(e) {
+        var id = $(this).data('id');
+        $('#add').modal('show');
+        // get_row(id);
+    });
+
 
     $(document).on('click', '.view', function(e) {
         var id = $(this).data('id');

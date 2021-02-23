@@ -1,5 +1,5 @@
 <?php
-include "../../config/db_conn.php";
+include "../../../config/db_conn.php";
 session_start();
 
 function insert_klas($naam,$conn,$jaar,$richting){
@@ -19,4 +19,4 @@ $jaar = mysqli_real_escape_string($conn,$_POST['jaar']);
 $richting = mysqli_real_escape_string($conn,$_POST['richting']);
 
 insert_klas($naam,$conn,$jaar,$richting);
-header("location:../view/klassen.php");
+header("location:../../view/klassen.php");

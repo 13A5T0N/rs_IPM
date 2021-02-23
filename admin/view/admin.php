@@ -48,7 +48,7 @@ include "../includes/errors.php";
                                                 <td><?php echo $row['admin_naam']; ?></td>
                                                 <td><?php echo $row['admin_status']; ?></td>
                                                 <td>
-                                                    <a href="#" class="view" data-id="<?php echo $row['admin_id']; ?>"><i class="material-icons">launch</i></a>
+                                                    <a href="#" class="view" data-id="<?php echo $row['admin_id']; ?>"><i class="material-icons">eye</i></a>
                                                     <a href="#" class="edit" data-id="<?php echo $row['admin_id']; ?>"><i class="material-icons text-info">edit</i></a>
                                                     <a href="#" class="delete" data-id="<?php echo $row['admin_id']; ?>"><i class="material-icons text-danger">delete</i></a>
                                                 </td>

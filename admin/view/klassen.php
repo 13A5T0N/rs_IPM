@@ -54,7 +54,6 @@ include "../includes/errors.php"; ?>
                                     <?php
                                         }
                                     } else {
-                                        
                                     }
                                     ?>
                                 </tbody>
@@ -88,57 +87,57 @@ include "../includes/errors.php"; ?>
             </div>
         </div>
     </div>
+</div>
+<?php include "../includes/scripts.php"; ?>
 
-    <?php include "../includes/scripts.php";
-    include "../modals/klassen_modal.php"; ?>
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) {
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function(event) {
+        var element = document.getElementById("klas");
+        element.classList.add("active");
+    });
 
-            var element = document.getElementById("klas");
-            element.classList.add("active");
+    $(document).on('click', '.view', function(e) {
+        var id = $(this).data('id');
+        $('#view').modal('show');
+        get_row(id);
+    });
+
+    $(document).on('click', '.edit', function(e) {
+        var id = $(this).data('id');
+        $('#edit').modal('show');
+        get_row(id);
+    });
+
+    $(document).on('click', '.delete', function(e) {
+        var id = $(this).data('id');
+        $('#delete').modal('show');
+        get_row(id);
+    });
+
+
+    function get_row(id) {
+        $.ajax({
+            type: 'POST',
+            url: '../backend/get_klas.php',
+            data: {
+                id: id
+            },
+            dataType: 'json',
+            success: function(response) {
+                $('#view_naam').val(response.klas_naam);
+                $('#view_schooljaar').val(response.klas_jaar);
+                $('#view_richting').val(response.richting_afkorting);
+
+                $('#edit_naam').val(response.klas_naam);
+                $('#edit_jaar option[value="' + response.klas_jaar + '"]').attr('selected', 'selected');
+                $('#edit_richting option[value="' + response.richting_id + '"]').attr('selected', 'selected');
+                $('#edit_id').val(response.klas_id)
+
+
+                $('#delete_id').val(response.klas_id)
+            }
         });
-
-        $(document).on('click', '.view', function(e) {
-            var id = $(this).data('id');
-            $('#view').modal('show');
-            get_row(id);
-        });
-
-        $(document).on('click', '.edit', function(e) {
-            var id = $(this).data('id');
-            $('#edit').modal('show');
-            get_row(id);
-        });
-
-        $(document).on('click', '.delete', function(e) {
-            var id = $(this).data('id');
-            $('#delete').modal('show');
-            get_row(id);
-        });
-
-
-        function get_row(id) {
-            $.ajax({
-                type: 'POST',
-                url: '../backend/get_klas.php',
-                data: {
-                    id: id
-                },
-                dataType: 'json',
-                success: function(response) {
-                    $('#view_naam').val(response.klas_naam);
-                    $('#view_schooljaar').val(response.klas_jaar);
-                    $('#view_richting').val(response.richting_afkorting);
-
-                    $('#edit_naam').val(response.klas_naam);
-                    $('#edit_jaar option[value="' + response.klas_jaar + '"]').attr('selected', 'selected');
-                    $('#edit_richting option[value="' + response.richting_id + '"]').attr('selected', 'selected');
-                    $('#edit_id').val(response.klas_id)
-
-
-                    $('#delete_id').val(response.klas_id)
-                }
-            });
-        }
-    </script>
+    }
+</script>
+<?php include "../modals/klassen_modal.php"; ?>

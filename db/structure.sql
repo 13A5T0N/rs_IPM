@@ -15,7 +15,7 @@ log_action varchar(50),
 admin int,
 log_date datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
-constraint FK_admin_log foreign key (admin) references admin(admin_id) on delete cascade
+constraint FK_admin_log foreign key (admin) references admin(admin_id) ON DELETE CASCADE
 );
 
 create table ipm.studenten(
@@ -54,7 +54,7 @@ vak_afkorting varchar(20),
 vak_jaar int(5),
 vak_richting int(10),
 
-constraint FK_cak_richting foreign key (vak_richting) references richting(richting_id)
+constraint FK_cak_richting foreign key (vak_richting) references richting(richting_id) ON DELETE CASCADE 
 );
 
 create table ipm.klassen(
@@ -63,5 +63,12 @@ klas_naam varchar(50),
 klas_richting int,
 klas_jaar int, 
 
-constraint klas_richting foreign key (klas_richting) references richting(richting_id)
+constraint klas_richting foreign key (klas_richting) references richting(richting_id) ON DELETE CASCADE
+);
+
+create table ipm.document(
+document_id int primary key auto_increment,
+document_naam varchar(50),
+document_tarief double,
+document_path text
 );

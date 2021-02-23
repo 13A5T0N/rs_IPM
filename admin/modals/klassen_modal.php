@@ -7,7 +7,7 @@ include "../../config/db_conn.php";
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <form action="../backend/add_klas.php" method="post" autocomplete="off">
+                <form action="../backend/add/add_klas.php" method="post" autocomplete="off">
                     <h4 class="text-center">Voeg nieuw vak</h4>
                     <hr class="bg-dark col-10">
                     <!-- personal info -->
@@ -165,7 +165,8 @@ include "../../config/db_conn.php";
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-6">
+                    
+                        <!-- <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="jaar">Schooljaar</label>
                                 <select id="edit_jaar" name="jaar">
@@ -176,7 +177,7 @@ include "../../config/db_conn.php";
                                     <option value="4">4</option>
                                 </select>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="col-sm-6">
                             <div class="form-group" style="margin-top: 3px;">
                                 <label for="richting">Richting</label>

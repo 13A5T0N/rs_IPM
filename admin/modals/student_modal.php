@@ -113,29 +113,39 @@ include "../includes/scripts.php";
                             </div>
 
                             <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                                <div class="row">
-                                    <div class="col-sm-12">
-                                        <h4 class="text-center">Import studenten</h4>
-                                        <hr class="bg-dark col-12">
-                                        <br>
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="customFileLang" lang="en">
-                                            <label class="custom-file-label" for="customFileLang">Select file</label>
-                                        </div>
+                            <form action="../backend/add/import_student.php" method="post" autocomplete="off" enctype="multipart/form-data">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <h4 class="text-center">Import studenten</h4>
+                                            <hr class="bg-dark col-12">
+                                            <br>
+                                            <div>
+                                                <span class="fileinput-new">Select file</span>
+                                                <br>
+                                                <input type="file" name="filename" id="">
+                                                </span>
+                                            </div>
 
+                                        </div>
                                     </div>
-                                </div>
+                                    <div class="row"><br><br>
+                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-success">Save</button>
+                                </form>
                             </div>
+                            </form>
+
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="modal-footer">
+            <div class="modal-footer">
 
-                </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <!-- view Modal -->
@@ -254,12 +264,12 @@ include "../includes/scripts.php";
                     <!-- personal info -->
                     <div class="row">
                         <div class="col-sm-6">
-                                <h10 class="col-sm control-label"><strong>Persoonlijke Info</strong></h10>
-                                <br>
-                                <div class="form-group">
-                                    <label for="" class="col-sm control-label">Student Naam</label>
-                                    <input type="text" class="form-control" id="edit_naam" name="naam" class="text-center">
-                                </div>
+                            <h10 class="col-sm control-label"><strong>Persoonlijke Info</strong></h10>
+                            <br>
+                            <div class="form-group">
+                                <label for="" class="col-sm control-label">Student Naam</label>
+                                <input type="text" class="form-control" id="edit_naam" name="naam" class="text-center">
+                            </div>
                         </div>
                         <div class="col-sm-6" style="margin-top: 24px;">
                             <div class="form-group">
