@@ -33,7 +33,7 @@ include "../includes/errors.php"; ?>
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $sql = "SELECT * FROM klassen";
+                                    $sql = "SELECT * FROM klassen,richting where richting.richting_id = klassen.klas_richting";
                                     $result = $conn->query($sql);
 
                                     if ($result->num_rows > 0) {
@@ -44,7 +44,7 @@ include "../includes/errors.php"; ?>
                                                 <td><?php echo $row['klas_id']; ?></td>
                                                 <td><?php echo $row['klas_naam']; ?></td>
                                                 <td><?php echo $row['klas_jaar']; ?></td>
-                                                <td><?php echo $row['klas_richting']; ?></td>
+                                                <td><?php echo $row['richting_afkorting']; ?></td>
                                                 <td>
                                                     <a href="#" class="view" data-id="<?php echo $row['klas_id']; ?>"><i class="material-icons">launch</i></a>
                                                     <a href="#" class="edit" data-id="<?php echo $row['klas_id']; ?>"><i class="material-icons text-info">edit</i></a>

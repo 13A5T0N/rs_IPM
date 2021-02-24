@@ -9,7 +9,7 @@ function update_info($conn, $richting, $naam,$jaar,$id)
     `klas_jaar`= $jaar,`klas_richting`= $richting WHERE `klas_id` = $id";
 
     if ($conn->query($sql) === TRUE) {
-        $_SESSION['success'] = 'vak bewerkt';
+        $_SESSION['success'] = 'Klas bewerkt';
     } else {
         $_SESSION['error'] = $conn->error;
     }
@@ -20,6 +20,7 @@ $id = filter_var(mysqli_real_escape_string($conn, $_POST['edit_id']), FILTER_SAN
 $naam = mysqli_real_escape_string($conn,$_POST['naam']);
 $jaar =  filter_var(mysqli_real_escape_string($conn, $_POST['jaar']), FILTER_SANITIZE_NUMBER_INT);
 $richting = filter_var(mysqli_real_escape_string($conn, $_POST['richting']), FILTER_SANITIZE_NUMBER_INT);
+
 
 update_info($conn, $richting, $naam,$jaar,$id);
 

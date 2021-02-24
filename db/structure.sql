@@ -59,7 +59,7 @@ constraint FK_cak_richting foreign key (vak_richting) references richting(richti
 
 create table ipm.klassen(
 klas_id int primary key auto_increment,
-klas_naam varchar(50),
+klas_naam varchar(50) not null unique,
 klas_richting int,
 klas_jaar int, 
 
@@ -71,4 +71,31 @@ document_id int primary key auto_increment,
 document_naam varchar(50),
 document_tarief double,
 document_path text
+);
+
+create table ipm.rooster(
+rooster_id int auto_increment primary key, 
+rooster_periode int, 
+rooster_richting int,
+rooster_start date, 
+rooster_eind date, 
+rooster_path text, 
+
+constraint FK_rooster_richting foreign key (rooster_richting) references richting(richting_id)  ON DELETE CASCADE
+);
+create table klas_formatie(
+formatie_id int auto_increment primary key, 
+formatie_klas int, 
+formatie_schooljaar varchar(50),
+
+constraint foreign key (formatie_klas) references klassen(klas_id) ON DELETE CASCADE
+);
+
+create table ipm.klassen_formaties(
+formatie_id int auto_increment primary key, 
+klf_formatie int,
+klf_stud int, 
+
+constraint FK_klf_formatie foreign key (klf_formatie) references klas_formatie(formatie_id) ON DELETE CASCADE,
+constraint FK_kl_student foreign key (klf_stud) references studenten(student_nr) ON DELETE CASCADE
 );

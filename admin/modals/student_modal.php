@@ -111,40 +111,15 @@ include "../includes/scripts.php";
                                     </form>
                                 </div>
                             </div>
-
-                            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                            <form action="../backend/add/import_student.php" method="post" autocomplete="off" enctype="multipart/form-data">
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <h4 class="text-center">Import studenten</h4>
-                                            <hr class="bg-dark col-12">
-                                            <br>
-                                            <div>
-                                                <span class="fileinput-new">Select file</span>
-                                                <br>
-                                                <input type="file" name="filename" id="">
-                                                </span>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="row"><br><br>
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-success">Save</button>
-                                </form>
-                            </div>
-                            </form>
-
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="modal-footer">
-
+                </div>
             </div>
         </div>
+
     </div>
+</div>
 </div>
 </div>
 
