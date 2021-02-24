@@ -25,30 +25,45 @@ include "../includes/errors.php"; ?>
                                         vak
                                     </th>
                                     <th>
-                                        uploaded
+                                        Richting
                                     </th>
                                     <th>
-                                        Acties
+                                       periode
                                     </th>
+                                    <!-- <th>
+                                        Acties
+                                    </th> -->
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            1
-                                        </td>
-                                        <td>
-                                            1.02
-                                        </td>
-                                        <td>
-                                            Dakota Rice
-                                        </td>
-                                        <td>
-                                            00-00-0000
-                                        </td>
-                                        <td>
-                                            <a href="#"><i class="material-icons text-danger">delete</i></a>
-                                            <a href="#"><i class="material-icons text-success">launch</i></a>
-                                        </td>
+                                    <?php
+                                    $sql = "select cf_kl,klas_naam, cf_periode, vak_naam, richting_afkorting 
+                                    from cijfers_klas,klassen,vak,richting
+                                    where cijfers_klas.cf_klas = klassen.klas_id and cijfers_klas.cf_vak = vak.vak_id and klassen.klas_richting = richting.richting_id group by  cf_kl desc
+                                    ";
+                                    $result = $conn->query($sql);
+
+                                    if ($result->num_rows > 0) {
+                                        // output data of each row
+                                        while ($row = $result->fetch_assoc()) {
+                                    ?>
+                                            <tr>
+                                                <td><?php echo $row['cf_kl']; ?></td>
+                                                <td><?php echo $row['klas_naam']; ?></td>
+                                                <td><?php echo $row['vak_naam']; ?></td>
+                                                <td><?php echo $row['richting_afkorting']; ?></td>
+                                                <td><?php echo $row['cf_periode']; ?></td>
+                                                <!-- <td>
+                                                    <a href="../../docs/<?php echo $row['document_path']; ?>" target="blank"><i class="material-icons">launch</i></a>
+                                                    <a href="#" class="delete" data-id="<?php echo $row['document_id']; ?>"><i class="material-icons text-danger">delete</i></a>
+                                                </td> -->
+                                            </tr>
+                                    <?php
+                                        }
+                                    } else {
+                                        
+                                    }
+                                    ?>
+
                                 </tbody>
                             </table>
                         </div>

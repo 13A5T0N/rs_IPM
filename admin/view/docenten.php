@@ -58,7 +58,7 @@ include "../includes/errors.php"; ?>
                                     }
                                     ?>
 
-                                </tbody data-id>
+                                </tbody>
                             </table>
                         </div>
                     </div>
