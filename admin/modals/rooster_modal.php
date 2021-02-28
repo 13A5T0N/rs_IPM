@@ -8,7 +8,7 @@ include "../../config/db_conn.php";
         <div class="modal-content">
             <div class="modal-body">
                 <form enctype="multipart/form-data" action="../backend/add/add_rooster.php" method="post" autocomplete="off">
-                    <h4 class="text-center">Voeg nieuw rooster</h4>
+                    <h4 class="text-center">Rooster Toevoegen</h4>
                     <hr class="bg-dark col-11">
                     <!-- personal info -->
                     <div class="row">
@@ -35,34 +35,34 @@ include "../../config/db_conn.php";
                             </div>
                         </div>
                     </div><br>
-                    <h4 class="text-center">Geldig</h4>
+                    <h4 class="text-center">Periode</h4>
                     <hr class="bg-dark col-11">
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label class="label-control">Start</label>
+                                <label class="label-control">Begin datum</label>
                                 <input type="date" class="form-control datepicker" value="21/06/2018" name="start" />
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label class="label-control">eind</label>
+                                <label class="label-control">Eind datum</label>
                                 <input type="date" class="form-control datepicker" value="21/06/2018" name="eind" />
                             </div>
                         </div>
                     </div><br>
-                    <h4 class="text-center">File</h4>
+                    <h4 class="text-center">Document</h4>
                     <hr class="bg-dark col-11">
                     <div>
-                        <span class="fileinput-new">Select file</span>
+                        <span class="fileinput-new">Selecteer file</span>
                         <br>
                         <input type="file" name="filename" id="">
                         </span>
                     </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <input type="submit" class="btn btn-success" value="Save">
+                <input type="submit" class="btn btn-success" value="Opslaan">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
                 </form>
             </div>
         </div>
@@ -81,15 +81,16 @@ include "../../config/db_conn.php";
                     <!-- personal info -->
                     <form action="../backend/delete/delete_rooster.php" method="post" autocomplete="off">
                         <div class="row">
-                            <div class="col-sm-6 ">
-                                <h3 class="text-center"><strong style="text-align: center;">Bent u zeker</strong> </h3>
+                            <div class="col-sm-12 ">
+                                <h3 class="text-center"><strong style="text-align: center;">Bent u zeker?</strong> </h3>
+                                  <h4 class="text-center"><strong style="text-align: center;">U kunt dit niet ongedaan maken!</strong> </h4>
                                 <input type="hidden" name="delete_id" id="delete_id">
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-warning" name="add">delete</button>
+                            <button type="submit" class="btn btn-warning" name="add">Verwijderen</button>
                     </form>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
                 </div>
             </div>
         </div>

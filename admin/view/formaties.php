@@ -74,20 +74,21 @@ include "../includes/errors.php"; ?>
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <h4 class="text-center">Vewijder klas</h4>
+                <h4 class="text-center">Vewijder klas formatie</h4>
                 <hr class="bg-dark col-10">
                 <!-- personal info -->
                 <form action="../backend/delete/delete_klas.php" method="post" autocomplete="off">
                     <div class="row">
-                        <div class="col-sm-6 ">
-                            <h3 class="text-center"><strong style="text-align: center;">Bent u zeker</strong> </h3>
+                        <div class="col-sm-12 ">
+                            <h3 class="text-center"><strong style="text-align: center;">Bent u zeker?</strong> </h3>
+                             <h3 class="text-center"><strong style="text-align: center;">U kunt dit niet ongedaan maken!</strong> </h3>
                             <input type="hidden" name="delete_id" id="delete_id">
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-warning" name="add">delete</button>
+                        <button type="submit" class="btn btn-warning" name="add">Verwijderen</button>
                 </form>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
             </div>
         </div>
     </div>

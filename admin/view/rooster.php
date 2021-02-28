@@ -22,10 +22,10 @@ include "../includes/errors.php"; ?>
                                         Richting
                                     </th>
                                     <th>
-                                        Start
+                                        Begin datum
                                     </th>
                                     <th>
-                                        Eind
+                                        Eind datum
                                     </th>
                                     <th>
                                         Acties

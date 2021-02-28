@@ -7,7 +7,7 @@ include "../includes/scripts.php";
         <div class="modal-content">
             <div class="modal-body">
                 <form action="../backend/add/add_richting.php" method="post" autocomplete="off">
-                    <h4 class="text-center">Voeg nieuw richting</h4>
+                    <h4 class="text-center">Richting toevoegen</h4>
                     <hr class="bg-dark col-10">
                     <!-- personal info -->
                     <div class="row">
@@ -27,8 +27,8 @@ include "../includes/scripts.php";
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <input type="submit" class="btn btn-success" value="Save">
+                <input type="submit" class="btn btn-success" value="Opslaan">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
                 </form>
             </div>
         </div>
@@ -42,7 +42,7 @@ include "../includes/scripts.php";
         <div class="modal-content">
             <div class="modal-body">
                 <form action="../backend/add/add_richting.php" method="post" autocomplete="off">
-                    <h4 class="text-center">Voeg nieuw richting</h4>
+                    <h4 class="text-center">Richting weergave</h4>
                     <hr class="bg-dark col-10">
                     <!-- personal info -->
                     <div class="row">
@@ -62,8 +62,8 @@ include "../includes/scripts.php";
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <input type="submit" class="btn btn-success" value="Save">
+                <input type="submit" class="btn btn-success" value="Opslaan">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
                 </form>
             </div>
         </div>
@@ -78,7 +78,7 @@ include "../includes/scripts.php";
             <div class="modal-body">
                 <form action="../backend/edit/edit_richting.php" method="post" autocomplete="off">
                 <input type="hidden" name="edit_id" id="edit_id">
-                    <h4 class="text-center">bewerk nieuw richting</h4>
+                    <h4 class="text-center">Richting bewerken</h4>
                     <hr class="bg-dark col-10">
                     <!-- personal info -->
                     <div class="row">
@@ -98,8 +98,8 @@ include "../includes/scripts.php";
 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <input type="submit" class="btn btn-success" value="Save">
+                <input type="submit" class="btn btn-success" value="Opslaan">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
                 </form>
             </div>
         </div>

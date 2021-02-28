@@ -6,7 +6,7 @@ include "../includes/errors.php";?>
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-success">
-                    <h4 class="card-title ">Documenten Table</h4>
+                    <h4 class="card-title ">Documenten Tabel</h4>
                         <p class="card-category"><button type="button" class="btn btn-info" data-toggle="modal" data-target="#add">
                                 Document Toevoegen
                             </button></p>
@@ -72,14 +72,15 @@ include "../includes/errors.php";?>
                 <form action="../backend/delete/delete_document.php" method="post" autocomplete="off">
                     <div class="row">
                         <div class="col-sm-12 ">
-                            <h3 class="text-center"><strong style="text-align: center;">Bent u zeker</strong> </h3>
+                            <h3 class="text-center"><strong style="text-align: center;">Bent u zeker?</strong> </h3>
+                            <h4 class="text-center"><strong style="text-align: center;">U kunt dit niet ongedaan maken!</strong> </h4>
                             <input type="hidden" name="delete_id" id="edit_id">
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-warning" name="add">delete</button>
+                        <button type="submit" class="btn btn-warning" name="add">Verwijderen</button>
                 </form>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
             </div>
         </div>
     </div>

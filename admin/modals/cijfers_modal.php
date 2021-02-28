@@ -13,7 +13,7 @@ include "../includes/scripts.php";
                             <hr class="bg-dark col-12">
                             <br>
                             <div>
-                                <span class="fileinput-new">Select file</span>
+                                <span class="fileinput-new">Selecteer file</span>
                                 <br>
                                 <input type="file" name="filename" id="">
                                 </span>
@@ -22,8 +22,8 @@ include "../includes/scripts.php";
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                        <input type="submit" class="btn btn-success" value="Save">
+                        <input type="submit" class="btn btn-success" value="Opslaan">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
                     </div>
                 </form>
             </div>

@@ -72,13 +72,14 @@ include "../includes/errors.php"; ?>
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
-                    <h4 class="text-center">Vewijder Admin account</h4>
+                    <h4 class="text-center">Vewijder Docent account</h4>
                     <hr class="bg-dark col-10">
                     <!-- personal info -->
                     <form action="../backend/delete/delete_docent.php" method="post" autocomplete="off">
                         <div class="row">
-                            <div class="col-sm-6 ">
-                                <h3 class="text-center"><strong>Bent u zeker</strong> </h3>
+                            <div class="col-sm-12 ">
+                                <h3 class="text-center"><strong>Bent u zeker?</strong> </h3>
+                                <h4 class="text-center"><strong>U kunt dit niet ongedaan maken!</strong> </h4>
                                 <input type="hidden" name="delete_id" id="delete_id">
                             </div>
                         </div>

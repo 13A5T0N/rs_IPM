@@ -7,7 +7,7 @@ include "../includes/scripts.php";
         <div class="modal-content">
             <div class="modal-body">
                 <form action="#" method="post" autocomplete="off">
-                    <h4 class="text-center">Voeg nieuw docent</h4>
+                    <h4 class="text-center">Docent Weergave</h4>
                     <hr class="bg-dark col-10">
                     <!-- personal info -->
                     <div class="row">
@@ -48,7 +48,7 @@ include "../includes/scripts.php";
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
                 </form>
             </div>
         </div>
@@ -63,7 +63,7 @@ include "../includes/scripts.php";
         <div class="modal-content">
             <div class="modal-body">
                 <form action="../backend/add/add_docent.php" method="post" autocomplete="off">
-                    <h4 class="text-center">Voeg nieuw student</h4>
+                    <h4 class="text-center">Docent Registratie</h4>
                     <hr class="bg-dark col-10">
                     <!-- personal info -->
                     <div class="row">
@@ -104,8 +104,8 @@ include "../includes/scripts.php";
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <input type="submit" class="btn btn-success" value="Save">
+                <input type="submit" class="btn btn-success" value="Opslaan">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
                 </form>
             </div>
         </div>
@@ -120,7 +120,7 @@ include "../includes/scripts.php";
         <div class="modal-content">
             <div class="modal-body">
                 <form action="../backend/edit/edit_docent.php" method="post" autocomplete="off">
-                    <h4 class="text-center">Voeg nieuw student</h4>
+                    <h4 class="text-center">Docent bewerken</h4>
                     <hr class="bg-dark col-10">
                     <!-- personal info -->
                     <div class="row">
@@ -162,8 +162,8 @@ include "../includes/scripts.php";
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <input type="submit" class="btn btn-success" value="Save">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
+                <input type="submit" class="btn btn-success" value="Opslaan">
                 </form>
             </div>
         </div>

@@ -7,7 +7,7 @@ include "../../config/db_conn.php";
         <div class="modal-content">
             <div class="modal-body">
                 <form enctype="multipart/form-data" action="../backend/add/add_document.php" method="post" autocomplete="off">
-                    <h4 class="text-center">Voeg nieuw documenten</h4>
+                    <h4 class="text-center">Documenten toevoegen</h4>
                     <hr class="bg-dark col-10">
                     <!-- personal info -->
                     <div class="row">
@@ -26,15 +26,15 @@ include "../../config/db_conn.php";
                     </div>
                     <div class="fileinput-preview fileinput-exists thumbnail img-raised"></div>
                     <div>
-                        <span class="fileinput-new">Select file</span>
+                        <span class="fileinput-new">Selecteer file</span>
                         <br>
                         <input type="file" name="filename" id="">
                         </span>
                     </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <input type="submit" class="btn btn-success" value="Save">
+                <input type="submit" class="btn btn-success" value="Opslaan">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
                 </form>
             </div>
         </div>

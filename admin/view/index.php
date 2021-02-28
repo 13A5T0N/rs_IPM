@@ -17,7 +17,7 @@
                     </div>
                     <div class="card-footer">
                         <div class="stats">
-                            <i class="material-icons">date_range</i> Last 24 Hours
+                            <i class="material-icons">date_range</i> Afgelopen 24 uur
                         </div>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="card-footer">
                         <div class="stats">
-                            <i class="material-icons">date_range</i> Last 24 Hours
+                            <i class="material-icons">date_range</i> Afgelopen 24 uur
                         </div>
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                     </div>
                     <div class="card-footer">
                         <div class="stats">
-                            <i class="material-icons">update</i> Just Updated
+                            <i class="material-icons">update</i> Afgelopen 24 uur
                         </div>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                     </div>
                     <div class="card-footer">
                         <div class="stats">
-                            <i class="material-icons">update</i> Just Updated
+                            <i class="material-icons">update</i> Afgelopen 24 uur
                         </div>
                     </div>
                 </div>
@@ -87,12 +87,12 @@
                     <div class="card-body">
                         <h4 class="card-title">chart</h4>
                         <p class="card-category">
-                            <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> increase in today sales.
+                            <span class="text-success"><i class="fa fa-long-arrow-up"></i> 55% </span> Openstaande aanvragen.
                         </p>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
-                            <i class="material-icons">access_time</i> updated 4 minutes ago
+                            <i class="material-icons">access_time</i> 4 minuten geleden bijgewerkt
                         </div>
                     </div>
                 </div>
@@ -104,13 +104,13 @@
             <div class="col-lg-6 col-md-12">
                 <div class="card">
                     <div class="card-header card-header-info">
-                        <h4 class="card-title">Latest Actions</h4>
+                        <h4 class="card-title">Laatste actie</h4>
                     </div>
                     <div class="card-body table-responsive">
                         <table class="table table-hover">
                             <thead class="text-warning">
                                 <th>ID</th>
-                                <th>Action</th>
+                                <th>Actie</th>
                                 <th>persoon</th>
                                 <th>datum</th>
                             </thead>
@@ -156,7 +156,7 @@
                 <div class="card">
                     <div class="card-header card-header-warning">
                         <h4 class="card-title">Document aanvraag</h4>
-                        <p class="card-category">New employees on 15th September, 2016</p>
+                       
                     </div>
                     <div class="card-body table-responsive">
                         <table class="table table-hover">

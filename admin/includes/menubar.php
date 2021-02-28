@@ -66,7 +66,7 @@ session_start();
 
                     <div id="school">
                         <li class="header" style="margin-left: 10px; color:white; margin-top: 15px">
-                            <strong>Logistics</strong>
+                            <strong>School</strong>
                         </li>
                         <li class="nav-item " style="margin-top:-15px;" id="roosters">
                             <a class="nav-link" href="../view/rooster.php">

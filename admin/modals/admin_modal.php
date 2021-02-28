@@ -6,7 +6,7 @@ include "../includes/scripts.php";
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <h4 class="text-center">Voeg nieuw Admin</h4>
+                <h4 class="text-center">Admin Registratie</h4>
                 <hr class="bg-dark col-10">
                 <!-- personal info -->
                 <form action="../backend/add/add_admin.php" method="post" autocomplete="off">
@@ -33,9 +33,9 @@ include "../includes/scripts.php";
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-success" name="add">Save</button>
+                        <button type="submit" class="btn btn-success" name="add">Opslaan</button>
                 </form>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
             </div>
         </div>
     </div>
@@ -87,7 +87,7 @@ include "../includes/scripts.php";
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
-                <h5 class="text-center">persoonlijke gegevens</h5>
+                <h5 class="text-center">Admin bewerken</h5>
                 <hr class="bg-dark col-10">
                 <!-- personal info -->
                 <form action="../backend/edit/edit_admin.php" method="post" autocomplete="off" class="">
@@ -115,7 +115,7 @@ include "../includes/scripts.php";
                         </div>
                     </div>
                     <div class="form-check">
-                        <h5 class="text-center">Acount</h5>
+                        <h5 class="text-center">Account</h5>
                         <hr class="bg-dark col-10">
                         <div class="row">
                             <div class="col-sm-6">
@@ -137,9 +137,9 @@ include "../includes/scripts.php";
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="submit" class="btn btn-success">Update</button>
+                            <button type="submit" class="btn btn-success">Bewerk</button>
                 </form>
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
             </div>
         </div>
     </div>
