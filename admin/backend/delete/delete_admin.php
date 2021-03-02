@@ -11,4 +11,4 @@ if ($conn->query($sql) === TRUE) {
     $_SESSION['error'] = $conn->error;
 }
 
-header("location:../../view/admin.php");
+header("location:../../view/admin.php?status=5");

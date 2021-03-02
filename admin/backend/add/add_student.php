@@ -27,4 +27,4 @@ $emergency_email = mysqli_real_escape_string($conn,$_POST['emergency_email']);
 
 insert_student($naam,$voornaam,$leeftijd,$woon,$email,$tel,$emergency_naam,$emergency_relatie,$emergency_nummer,$emergency_email,$conn);
 
-header("location:../../view/studenten.php");
+header("location:../../view/studenten.php?status=6");

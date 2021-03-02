@@ -31,19 +31,19 @@ session_start();
                             <strong>Accounts</strong>
                         </li>
                         <li class="nav-item" style="margin-top:-15px;" id="admin">
-                            <a class="nav-link" href="../view/admin.php">
+                            <a class="nav-link" href="../view/admin.php?status=0">
                                 <i class="material-icons" style="font-size: 25px;">account_box</i>
                                 <p>Admin</p>
                             </a>
                         </li>
                         <li class="nav-item" style="margin-top:-25px;" id="studenten">
-                            <a class="nav-link" href="../view/studenten.php">
+                            <a class="nav-link" href="../view/studenten.php?status=0">
                                 <i class="material-icons" style="font-size: 25px;">perm_identity</i>
                                 <p>Studenten</p>
                             </a>
                         </li>
                         <li class="nav-item" style="margin-top:-25px;" id="docenten">
-                            <a class="nav-link" href="../view/docenten.php">
+                            <a class="nav-link" href="../view/docenten.php?status=0">
                                 <i class="material-icons" style="font-size: 25px;">portrait</i>
                                 <p>Docenten</p>
                             </a>
@@ -51,14 +51,14 @@ session_start();
                     </div>
 
                     <li class="nav-item " id="cijferlijst">
-                        <a class="nav-link" href="../view/cijfers.php">
+                        <a class="nav-link" href="../view/cijfers.php?status=0">
                             <i class="material-icons"> ballot</i>
                             <p>Cijfers</p>
                         </a>
                     </li>
 
                     <li class="nav-item " id="documenten">
-                        <a class="nav-link" href="../view/documenten.php">
+                        <a class="nav-link" href="../view/documenten.php?status=0">
                             <i class="material-icons">attachment</i>
                             <p>Documenten</p>
                         </a>
@@ -69,31 +69,31 @@ session_start();
                             <strong>School</strong>
                         </li>
                         <li class="nav-item " style="margin-top:-15px;" id="roosters">
-                            <a class="nav-link" href="../view/rooster.php">
+                            <a class="nav-link" href="../view/rooster.php?status=0">
                                 <i class="material-icons">text_snippet</i>
                                 <p>Roosters</p>
                             </a>
                         </li>
                         <li class="nav-item " style="margin-top:-25px;" id="richting">
-                            <a class="nav-link" href="../view/richtingen.php">
+                            <a class="nav-link" href="../view/richtingen.php?status=0">
                                 <i class="material-icons">web_asset</i>
                                 <p>Richtingen</p>
                             </a>
                         </li>
                         <li class="nav-item " style="margin-top:-25px;" id="klas">
-                            <a class="nav-link" href="../view/klassen.php">
+                            <a class="nav-link" href="../view/klassen.php?status=0">
                                 <i class="material-icons">list_alt</i>
                                 <p>klassen</p>
                             </a>
                         </li>
                         <li class="nav-item " style="margin-top:-25px;" id="formaties">
-                            <a class="nav-link" href="../view/formaties.php">
+                            <a class="nav-link" href="../view/formaties.php?status=0">
                                 <i class="material-icons">assignment_ind</i>
                                 <p>klassen Formaties</p>
                             </a>
                         </li>
                         <li class="nav-item " style="margin-top:-25px;" id="vak">
-                            <a class="nav-link" href="../view/vakken.php">
+                            <a class="nav-link" href="../view/vakken.php?status=0">
                                 <i class="material-icons">book</i>
                                 <p>Vakken</p>
                             </a>

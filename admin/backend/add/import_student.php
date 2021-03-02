@@ -26,4 +26,4 @@ if (move_uploaded_file($_FILES["filename"]["tmp_name"], '../../../docs/' . $file
 } else {
     echo "error uploading";
 }
-header("location:../../view/studenten.php");
+header("location:../../view/studenten.php?status=7");

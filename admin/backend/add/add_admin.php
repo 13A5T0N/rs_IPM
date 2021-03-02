@@ -32,4 +32,4 @@ $email = mysqli_real_escape_string($conn,$_POST['email']);
 
 insert_data($voornaam,$naam,$email,$conn);
 
-header("location:../../view/admin.php");
+header("location:../../view/admin.php?status=3");

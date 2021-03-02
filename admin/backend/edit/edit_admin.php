@@ -35,7 +35,6 @@ if ($reset = 1) {
     update_pwd($conn,$id);
 } else {
     update_info($conn, $voornaam, $naam, $status, $email, $id);
-    update_pwd($conn,$id);
 }
 
-header("location:../../view/admin.php");
+header("location:../../view/admin.php?status=4");

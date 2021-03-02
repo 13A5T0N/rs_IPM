@@ -50,4 +50,4 @@ update_info($conn, $voornaam, $naam, $leeftijd,$woon,$tel, $email,$emergency_naa
 //     update_pwd($conn,$id);
 // }
 
-header("location:../../view/studenten.php");
+header("location:../../view/studenten.php?status=8");
