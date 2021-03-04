@@ -126,7 +126,7 @@ include "../modals/docent_modal.php";
     function get_row(id) {
         $.ajax({
             type: 'POST',
-            url: '../backend/get_docent.php',
+            url: '../backend/get/get_docent.php',
             data: {
                 id: id
             },

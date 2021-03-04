@@ -129,7 +129,7 @@ include "../modals/vak_modal.php"; ?>
     function get_row(id) {
         $.ajax({
             type: 'POST',
-            url: '../backend/get_vak.php',
+            url: '../backend/get/get_vak.php',
             data: {
                 id: id
             },

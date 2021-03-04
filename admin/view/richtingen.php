@@ -117,7 +117,7 @@ include "../includes/errors.php"; ?>
         function get_row(id) {
             $.ajax({
                 type: 'POST',
-                url: '../backend/get_richting.php',
+                url: '../backend/get/get_richting.php',
                 data: {
                     id: id
                 },

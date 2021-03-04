@@ -130,7 +130,7 @@ include "../includes/errors.php"; ?>
         function get_row(id) {
             $.ajax({
                 type: 'POST',
-                url: '../backend/get_student.php',
+                url: '../backend/get/get_student.php',
                 data: {
                     id: id
                 },

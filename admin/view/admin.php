@@ -129,7 +129,7 @@ include "../modals/admin_modal.php";
     function get_row(id) {
         $.ajax({
             type: 'POST',
-            url: '../backend/get_admin.php',
+            url: '../backend/get/get_admin.php',
             data: {
                 id: id
             },

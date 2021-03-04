@@ -111,7 +111,7 @@ include "../includes/scripts.php";
     function get_row(id) {
         $.ajax({
             type: 'POST',
-            url: '../backend/get_document.php',
+            url: '../backend/get/get_document.php',
             data: {
                 id: id
             },
