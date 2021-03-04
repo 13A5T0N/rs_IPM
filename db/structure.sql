@@ -99,3 +99,23 @@ klf_stud int,
 constraint FK_klf_formatie foreign key (klf_formatie) references klas_formatie(formatie_id) ON DELETE CASCADE,
 constraint FK_kl_student foreign key (klf_stud) references studenten(student_nr) ON DELETE CASCADE
 );
+
+create table ipm.cijfers_klas(
+cf_kl int primary key auto_increment,
+cf_klas int, 
+cf_vak int, 
+cf_periode int,
+
+constraint FK_cijfer_klas foreign key (cf_klas) references klassen(klas_id) ON DELETE CASCADE, 
+constraint FK_cijfers_vak foreign key (cf_vak) references vak(vak_id) ON DELETE CASCADE
+);
+
+create table ipm.cijfers_student(
+cf_st int auto_increment primary key, 
+cf_klas int,
+cf_student int, 
+cf_cijfer double,
+
+constraint FK_cijer_student foreign key (cf_student) references studenten(student_nr) ON DELETE CASCADE,
+constraint FK_cijfer_klas_student foreign key (cf_klas) references cijfers_klas(cf_kl)  ON DELETE CASCADE
+);
