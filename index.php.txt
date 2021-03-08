@@ -14,7 +14,7 @@
             <form action="admin/backend/login.php" method="post" autocomplete="off">
                 <h1>Welcome</h1>
                 <span>sign in with your account</span>
-                <input type="email" placeholder="Email" name="email" autofocus required />
+                <input type="text" placeholder="Email" name="email" autofocus required />
                 <input type="password" placeholder="Password" name="password" required />
                 <!-- <a href="#">Forgot your password?</a> -->
                 <input type="submit" class="btn" value="Sign In">
