@@ -20,4 +20,4 @@ if (move_uploaded_file($_FILES["filename"]["tmp_name"], '../../../docs/' . $file
     $_SESSION['error'] = "File upload mislukt";
 }
 
-header("location:../../view/rooster.php");
+header("location:../../view/rooster.php?status=16");

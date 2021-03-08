@@ -25,4 +25,4 @@ $afkoritng = mysqli_real_escape_string($conn, $_POST['afkoritng']);
 update_info($conn, $afkoritng,$naam,$id);
 
 
-header("location:../../view/richtingen.php");
+header("location:../../view/richtingen.php?status=19");

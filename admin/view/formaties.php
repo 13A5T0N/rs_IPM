@@ -125,7 +125,7 @@ include "../includes/errors.php"; ?>
     function get_row(id) {
         $.ajax({
             type: 'POST',
-            url: '../backend/get_klas.php',
+            url: '../backend/get/get_klas.php',
             data: {
                 id: id
             },

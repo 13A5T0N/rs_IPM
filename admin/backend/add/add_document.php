@@ -19,4 +19,4 @@ if (move_uploaded_file($_FILES["filename"]["tmp_name"], '../../../docs/' . $file
     echo "failed";
 }
 
-header("location:../../view/documenten.php");
+header("location:../../view/documenten.php?status=14");

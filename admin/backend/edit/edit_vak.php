@@ -25,4 +25,4 @@ $richting = filter_var(mysqli_real_escape_string($conn, $_POST['richting']), FIL
 
 update_info($conn, $richting, $naam,$jaar, $afkorting,$id);
 
-header("location:../../view/vakken.php");
+header("location:../../view/vakken.php?status=27");

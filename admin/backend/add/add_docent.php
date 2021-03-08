@@ -33,4 +33,4 @@ $tel = mysqli_real_escape_string($conn,$_POST['tel']);
 
 insert_data($voornaam,$naam,$email,$conn,$tel);
 
-header("location:../../view/docenten.php");
+header("location:../../view/docenten.php?status=10");

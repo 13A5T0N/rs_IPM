@@ -26,4 +26,4 @@ $tel = mysqli_real_escape_string($conn, $_POST['tel']);
 update_info($conn, $voornaam, $naam, $tel, $email, $id);
 
 
-header("location:../../view/docenten.php");
+header("location:../../view/docenten.php?status=11");

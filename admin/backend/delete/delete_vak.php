@@ -12,4 +12,4 @@ if ($conn->query($sql) === TRUE) {
     echo $conn->error;
 }
 
-header("location:../../view/vakken.php");
+header("location:../../view/vakken.php?status=26");

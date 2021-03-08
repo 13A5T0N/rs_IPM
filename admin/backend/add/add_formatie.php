@@ -75,4 +75,4 @@ if (move_uploaded_file($_FILES["filename"]["tmp_name"], '../../../docs/' . $file
     echo "error uploading";
 }
 unlink('../../../docs/'.$filename);
-header("location:../../view/formaties.php");
+header("location:../../view/formaties.php?status=24");

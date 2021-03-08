@@ -24,4 +24,4 @@ $richting = filter_var(mysqli_real_escape_string($conn, $_POST['richting']), FIL
 
 update_info($conn, $richting, $naam,$jaar,$id);
 
-header("location:../../view/klassen.php");
+header("location:../../view/klassen.php?status=22");

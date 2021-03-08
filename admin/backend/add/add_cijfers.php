@@ -88,4 +88,4 @@ if (move_uploaded_file($_FILES["filename"]["tmp_name"], '../../../docs/' . $file
     echo "error uploading";
 }
 unlink('../../../docs/'.$filename);
-header("location:../../view/cijfers.php");
+header("location:../../view/cijfers.php?status=13");

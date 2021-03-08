@@ -19,4 +19,4 @@ $jaar = mysqli_real_escape_string($conn,$_POST['jaar']);
 $richting = mysqli_real_escape_string($conn,$_POST['richting']);
 
 insert_klas($naam,$conn,$jaar,$richting);
-header("location:../../view/klassen.php");
+header("location:../../view/klassen.php?status=21");

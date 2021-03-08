@@ -11,4 +11,4 @@ if ($conn->query($sql) === TRUE) {
     echo $conn->error;
 }
 
-header("location:../../view/documenten.php");
+header("location:../../view/documenten.php?status=15");

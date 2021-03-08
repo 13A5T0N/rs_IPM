@@ -12,4 +12,4 @@ if ($conn->query($sql) === TRUE) {
     echo $conn->error;
 }
 
-header("location:../../view/richtingen.php");
+header("location:../../view/richtingen.php?status=20");
