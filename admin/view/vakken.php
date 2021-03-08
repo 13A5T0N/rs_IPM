@@ -7,7 +7,7 @@ include "../includes/errors.php"; ?>
                 <div class="card">
                     <div class="card-header card-header-success">
                         <h4 class="card-title ">Vakken Tabel</h4>
-                        <p class="card-category"><button type="button" id="add" class="btn btn-info" data-toggle="modal" data-target="#add">
+                        <p class="card-category"><button type="button" id="add" class="btn btn-info" data-toggle="modal" data-target="#delete">
                                 Vak Toevoegen
                             </button></p>
                     </div>
@@ -44,13 +44,12 @@ include "../includes/errors.php"; ?>
                                                 <td>
                                                     <a href="#" class="view" data-id="<?php echo $row['vak_id']; ?>"><i class="material-icons">launch</i></a>
                                                     <a href="#" class="edit" data-id="<?php echo $row['vak_id']; ?>"><i class="material-icons text-info">edit</i></a>
-                                                    <a href="#" class="delete" data-id="<?php echo $row['vak_id']; ?>"><i class="material-icons text-danger">delete</i></a>
+                                                    <!-- <a href="#" class="delete" data-id="<?php echo $row['vak_id']; ?>"><i class="material-icons text-danger">delete</i></a> -->
                                                 </td>
                                             </tr>
                                     <?php
                                         }
                                     } else {
-                                        echo "0 results";
                                     }
                                     ?>
 
@@ -66,6 +65,77 @@ include "../includes/errors.php"; ?>
 
 <!-- delete Modal -->
 <div class="modal fade" id="delete">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <form action="../backend/add/add_vak.php" method="post" autocomplete="off">
+                    <h4 class="text-center">Vak toevoegen</h4>
+                    <hr class="bg-dark col-10">
+                    <!-- personal info -->
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <!-- <h10 class="col-sm control-label">Persoonlijke Info<span style="color: red;">*</span></h10>
+                            <br> -->
+                            <div class="form-group">
+                                <label for="" class="col-sm control-label">Naam</label>
+                                <input type="text" class="form-control" id="" name="naam" class="" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="" class="col-sm control-label">afkorting</label>
+                                <input type="text" class="form-control" id="" name="afkoritng" class="" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="jaar">Schooljaar</label>
+                                <select id="jaar" name="jaar">
+                                    <option value="" selected> --Select-- </option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="richting">Richting</label>
+                                <select id="richting" name="richting">
+                                    <option value="" selected> --Select-- </option>
+                                    <?php $sql = "SELECT * FROM  richting";
+                                    $result = $conn->query($sql);
+
+                                    if ($result->num_rows > 0) {
+                                        // output data of each row
+                                        while ($row = $result->fetch_assoc()) {
+                                    ?>
+                                            <option value="<?php echo $row['richting_id'] ?>"><?php echo $row['richting_afkorting'] ?></option>
+
+                                    <?php
+                                        }
+                                    } else {
+                                        echo "0 results";
+                                    } ?>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <input type="submit" class="btn btn-success" value="Opslaan">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- add Modal -->
+<div class="modal fade" id="new">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body">
@@ -90,21 +160,20 @@ include "../includes/errors.php"; ?>
 </div>
 
 
+
 <?php include "../includes/scripts.php";
-include "../modals/vak_modal.php"; ?>
+?>
 
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
-
         var element = document.getElementById("vak");
         element.classList.add("active");
     });
 
-    $(document).on('click', '.add', function(e) {
-        var id = $(this).data('id');
-        $('#add').modal('show');
-        // get_row(id);
-    });
+    // $(document).on('click', '.add', function(e) {
+    //     var id = $(this).data('id');
+    //     $('#add').modal('show');
+    // });
 
 
     $(document).on('click', '.view', function(e) {
@@ -152,3 +221,5 @@ include "../modals/vak_modal.php"; ?>
         });
     }
 </script>
+
+<?php include "../modals/vak_modal.php"; ?>
