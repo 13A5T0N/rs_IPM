@@ -9,6 +9,42 @@
 </head>
 
 <body>
+<!-- #navbar -->
+<nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
+		
+			<a class="navbar-brand" href="#">
+				<h4 class="text-white "></h4>
+			</a>
+			
+			<div class="navbar-collapse navbar-custom-collapse collapse" id="navbar-collapse">
+				<div class="navbar-collapse-header">
+					<div class="row">
+
+						<div class="col-6 collapse-brand">
+							<h4></h4>
+						</div>
+						<div class="col-6 collapse-close">
+								<span></span>
+								<span></span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<ul class="navbar-nav mr-auto">
+					
+						<a href="./student/log_in.php">
+							<button class="btn btn-secondary btn-lg btn-block" type="button">
+								<span class="btn-inner--icon"><i class="fa fa-lock fa-lg"></i></span>
+								<span class="btn-inner--text">Student Login</span>
+							</button>
+						</a>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+    <!-- main admin login -->  
     <div class="container" id="container">
         <div class="form-container sign-in-container">
             <form action="admin/backend/login.php" method="post" autocomplete="off">
