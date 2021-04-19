@@ -22,11 +22,11 @@ session_start();
                     <li class="nav-item" id="dash">
                         <a class="nav-link" href="../view/index.php">
                             <i class="material-icons">dashboard</i>
-                            <p style="font-size: 15px;"> Dashboard</p>
+                            <p style="font-size: 15px;"> Profiel</p>
                         </a>
                     </li>
 
-                    <div id="account">
+                    <!-- <div id="account">
                         <li class="header" style="margin-left: 15px; color:white; margin-top: 15px">
                             <strong>Accounts</strong>
                         </li>
@@ -42,7 +42,7 @@ session_start();
                                 <p>Docenten</p>
                             </a>
                         </li>
-                    </div>
+                    </div> -->
 
                     <li class="nav-item " id="cijferlijst">
                         <a class="nav-link" href="../view/cijfers.php">

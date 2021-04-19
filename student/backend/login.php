@@ -22,8 +22,8 @@ include "../../config/db_conn.php";;
        $_SESSION['student_naam'] = $result['student_naam'];
        
 
-       header("location:../view/admin.php");
-       ob_enf_fluch();
+       header("location:../view/index_stud.php");
+       ob_end_flush();
      }
      
    }
