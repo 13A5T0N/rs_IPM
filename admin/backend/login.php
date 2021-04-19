@@ -31,7 +31,7 @@ $password = get_admin($conn, $email)[2];
 $user = get_admin($conn, $email)[3];
 
 if ($status == 0) {
-    header("location:../../index.php?status=0");
+    header("location:../../admin/log_in.php?status=0");
 } else {
     if ($account == 'actief') {
         if (password_verify($pwd, $password)) {
@@ -42,9 +42,9 @@ if ($status == 0) {
                 header("location:../view/index.php?status=1");
             }
         } else {
-            header("location:../../index.php?status=0");
+            header("location:../../admin/log_in.php?status=0");
         }
     } else {
-        header("location:../../index.php?status=1");
+        header("location:../../admin/log_in.php?status=1");
     }
 }

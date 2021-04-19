@@ -33,7 +33,7 @@ $user = get_student($conn, $email)[2];
 
 if ($status == 0) 
 {
-    header("location:../log_in.php?status=0");
+    header("location:../../index.php?status=0");
 } 
 
 else 
@@ -55,7 +55,7 @@ else
         } 
                    else 
                    {
-                     header("location:../log_in.php?status=0");
+                     header("location:../../index.php?status=0");
                    }
                      
 }
