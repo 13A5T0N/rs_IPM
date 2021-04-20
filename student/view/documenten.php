@@ -1,4 +1,4 @@
-<?php include "../includes/menubar.php"; ?>
+<?php include "../includes/menubar_stud.php"; ?>
 <div class="content">
     <div class="container-fluid">
         <div class="col-md-12">
@@ -11,12 +11,12 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
-                                <thead >
+                                <thead>
                                     <th>
                                         #
                                     </th>
                                     <th>
-                                       naam
+                                        naam
                                     </th>
                                     <th>
                                         tarief
@@ -24,27 +24,36 @@
                                     <th>
                                         uploaded
                                     </th>
-                                    <th>
+                                    <!-- <th>
                                         Acties
-                                    </th>
+                                    </th> -->
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            1
-                                        </td>
-                                        <td>
-                                            naam
-                                        </td>
-                                        <td>
-                                            20
-                                        </td>
-                                        <td>
-                                            00-00-0000
-                                        </td>
-                                        <td>
-                                            <a href="#"><i class="material-icons text-danger">sim_card_download</i></a>
-                                        </td>
+                                    <?php
+                                    $sql = "SELECT * FROM document";
+                                    $result = $conn->query($sql);
+
+                                    if ($result->num_rows > 0) {
+                                        // output data of each row
+                                        while ($row = $result->fetch_assoc()) {
+                                    ?>
+                                            <tr>
+                                                <td><?php echo $row['document_id']; ?></td>
+                                                <td><?php echo $row['document_naam']; ?></td>
+                                                <td><?php echo $row['document_tarief']; ?></td>
+                                                <td>
+                                                    <a href="../../docs/<?php echo $row['document_path']; ?>" target="blank"><i class="material-icons">launch</i></a>
+                                                    <!-- <a href="#" class="delete" data-id="<?php echo $row['document_id']; ?>"><i class="material-icons text-danger">delete</i></a> -->
+                                                </td>
+
+
+                                            </tr>
+                                    <?php
+                                        }
+                                    } else {
+                                    }
+                                    ?>
+
                                 </tbody>
                             </table>
                         </div>
@@ -52,12 +61,12 @@
                 </div>
             </div>
         </div>
-</div>
-<script>
-    document.addEventListener("DOMContentLoaded", function(event) {
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
 
-        var element = document.getElementById("documenten");
-        element.classList.add("active");
-    });
-</script>
+            var element = document.getElementById("documenten");
+            element.classList.add("active");
+        });
+    </script>
     <?php include "../includes/scripts.php"; ?>

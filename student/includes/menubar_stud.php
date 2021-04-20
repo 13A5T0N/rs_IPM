@@ -20,7 +20,7 @@ session_start();
             <div class="sidebar-wrapper">
                 <ul class="nav">
                     <li class="nav-item" id="dash">
-                        <a class="nav-link" href="../view/index.php">
+                        <a class="nav-link" href="../view/index_stud.php">
                             <i class="material-icons">dashboard</i>
                             <p style="font-size: 15px;"> Profiel</p>
                         </a>

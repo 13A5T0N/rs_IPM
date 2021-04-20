@@ -52,54 +52,47 @@
                     <div class="card-body table-responsive">
                         <table class="table table-hover">
                             <thead class="text-warning">
+                                <th>#</th>
                                 <th>Naam</th>
-                                <th>Voornaam</th>
-                                <th>Geboortedatum</th>
-                                <th>Contact</th>
+                                <th>Tarief</th>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>document upload</td>
-                                    <td>admin</td>
-                                    <td>00-00-0000</td>
-                                </tr> 
-                    <tr>
-                                    <td>2</td>
-                                    <td>document upload</td>
-                                    <td>admin</td>
-                                    <td>00-00-0000</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>document upload</td>
-                                    <td>admin</td>
-                                    <td>00-00-0000</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>document upload</td>
-                                    <td>admin</td>
-                                    <td>00-00-0000</td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>document upload</td>
-                                    <td>admin</td>
-                                    <td>00-00-0000</td>
-                                </tr> 
-                     </tbody>
-                        </table> 
 
-            
+                                <?php
+                                $sql = "SELECT * FROM document GROUP BY document_id";
+                                $result = $conn->query($sql);
 
-                               
-                        </div>
+                                if ($result->num_rows > 0) {
+                                    // output data of each row
+                                    while ($row = $result->fetch_assoc()) {
+                                ?>
+                                        <tr>
+                                            <td><?php echo $row['document_id']; ?></td>
+                                            <td><?php echo $row['document_naam']; ?></td>
+                                            <td><?php echo $row['document_tarief']; ?></td>
+                                            <td>
+                                                <!-- <a href="../../docs/<?php echo $row['document_path']; ?>" target="blank"><i class="material-icons">launch</i></a> -->
+                                                <!-- <a href="#" class="delete" data-id="<?php echo $row['document_id']; ?>"><i class="material-icons text-danger">delete</i></a> -->
+                                            </td>
+                                        </tr>
+                                <?php
+                                    }
+                                } else {
+                                }
+                                ?>
+
+                            </tbody>
+                        </table>
+
+
+
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
