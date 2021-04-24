@@ -40,17 +40,29 @@ include "../../config/db_conn.php";
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label class="label-control">Begin datum</label>
-                                <input type="date" class="form-control datepicker" value="21/06/2018" name="start" />
+                                <label class="label-control">Periode</label>
+                                <input type="text" class="form-control" id="" name="periode" class="" />
+                            </div>
+                        </div><br>
+                    </div>
+                    <div>
+                        <h4 class="text-center">Duur</h4>
+                        <hr class="bg-dark col-11">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="label-control">Begin datum</label>
+                                    <input type="date" class="form-control datepicker" value="21/06/2018" name="start" />
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="label-control">Eind datum</label>
+                                    <input type="date" class="form-control datepicker" value="21/06/2018" name="eind" />
+                                </div>
                             </div>
                         </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label class="label-control">Eind datum</label>
-                                <input type="date" class="form-control datepicker" value="21/06/2018" name="eind" />
-                            </div>
-                        </div>
-                    </div><br>
+                    </div> <br>
                     <h4 class="text-center">Document</h4>
                     <hr class="bg-dark col-11">
                     <div>
@@ -71,27 +83,27 @@ include "../../config/db_conn.php";
 </div>
 </div>
 
- <!-- delete Modal -->
- <div class="modal fade" id="delete">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <h4 class="text-center">Vewijder rooster</h4>
-                    <hr class="bg-dark col-10">
-                    <!-- personal info -->
-                    <form action="../backend/delete/delete_rooster.php" method="post" autocomplete="off">
-                        <div class="row">
-                            <div class="col-sm-12 ">
-                                <h3 class="text-center"><strong style="text-align: center;">Bent u zeker?</strong> </h3>
-                                  <h4 class="text-center"><strong style="text-align: center;">U kunt dit niet ongedaan maken!</strong> </h4>
-                                <input type="hidden" name="delete_id" id="delete_id">
-                            </div>
+<!-- delete Modal -->
+<div class="modal fade" id="delete">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h4 class="text-center">Vewijder rooster</h4>
+                <hr class="bg-dark col-10">
+                <!-- personal info -->
+                <form action="../backend/delete/delete_rooster.php" method="post" autocomplete="off">
+                    <div class="row">
+                        <div class="col-sm-12 ">
+                            <h3 class="text-center"><strong style="text-align: center;">Bent u zeker?</strong> </h3>
+                            <h4 class="text-center"><strong style="text-align: center;">U kunt dit niet ongedaan maken!</strong> </h4>
+                            <input type="hidden" name="delete_id" id="delete_id">
                         </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn btn-warning" name="add">Verwijderen</button>
-                    </form>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
-                </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-warning" name="add">Verwijderen</button>
+                </form>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
             </div>
         </div>
     </div>
+</div>

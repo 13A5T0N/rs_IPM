@@ -28,11 +28,11 @@ include "../includes/errors.php"; ?>
                                         Richting
                                     </th>
                                     <th>
-                                       periode
+                                        periode
                                     </th>
-                                    <!-- <th>
+                                    <th>
                                         Acties
-                                    </th> -->
+                                    </th>
                                 </thead>
                                 <tbody>
                                     <?php
@@ -52,15 +52,14 @@ include "../includes/errors.php"; ?>
                                                 <td><?php echo $row['vak_naam']; ?></td>
                                                 <td><?php echo $row['richting_afkorting']; ?></td>
                                                 <td><?php echo $row['cf_periode']; ?></td>
-                                                <!-- <td>
-                                                    <a href="../../docs/<?php echo $row['document_path']; ?>" target="blank"><i class="material-icons">launch</i></a>
+
+                                                <td> <a href="../../docs/<?php echo $row['document_path']; ?>" target="blank"><i class="material-icons">launch</i></a>
                                                     <a href="#" class="delete" data-id="<?php echo $row['document_id']; ?>"><i class="material-icons text-danger">delete</i></a>
-                                                </td> -->
+                                                </td>
                                             </tr>
                                     <?php
                                         }
                                     } else {
-                                        
                                     }
                                     ?>
 

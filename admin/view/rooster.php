@@ -6,7 +6,7 @@ include "../includes/errors.php"; ?>
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-success">
-                    <h4 class="card-title ">Rooster Tabel</h4>
+                        <h4 class="card-title ">Rooster Tabel</h4>
                         <p class="card-category"><button type="button" class="btn btn-info" data-toggle="modal" data-target="#add">
                                 Rooster Toevoegen
                             </button></p>
@@ -21,6 +21,7 @@ include "../includes/errors.php"; ?>
                                     <th>
                                         Richting
                                     </th>
+                                    <th>Periode</th>
                                     <th>
                                         Begin datum
                                     </th>
@@ -43,6 +44,7 @@ include "../includes/errors.php"; ?>
                                             <tr>
                                                 <td><?php echo $row['rooster_id']; ?></td>
                                                 <td><?php echo $row['richting_naam']; ?></td>
+                                                <td><?php echo $row['rooster_periode']; ?></td>
                                                 <td><?php echo $row['rooster_start']; ?></td>
                                                 <td><?php echo $row['rooster_eind']; ?></td>
                                                 <td>

@@ -11,8 +11,10 @@
                         <div class="card-icon">
                             <i class="material-icons">attachment</i>
                         </div>
-                        <p class="card-category">Upcoming classes</p>
-                        <h3 class="card-title">50
+                        <p class="card-category">Recente geuploade cijfers</p>
+                        <h3 class="card-title"> <?php $result = mysqli_query($conn, "SELECT COUNT(cf_student) as total FROM cijfers_student");
+                                                $data = mysqli_fetch_assoc($result);
+                                                echo $data['total']; ?>
                         </h3>
                     </div>
                     <div class="card-footer">
@@ -29,8 +31,12 @@
                         <div class="card-icon">
                             <i class="material-icons">web_asset</i>
                         </div>
-                        <p class="card-category">Recent updated documents</p>
-                        <h3 class="card-title">245</h3>
+                        <p class="card-category">Recente geuploade documenten</p>
+                        <h3 class="card-title">
+                            <?php $result = mysqli_query($conn, "SELECT COUNT(document_id) as total FROM document");
+                            $data = mysqli_fetch_assoc($result);
+                            echo $data['total']; ?>
+                        </h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
@@ -47,19 +53,19 @@
             <div class="col-lg-12 col-md-12">
                 <div class="card">
                     <div class="card-header card-header-success">
-                        <h4 class="card-title">Student gegevens</h4>
+                        <h4 class="card-title">Recente Roosters</h4>
                     </div>
                     <div class="card-body table-responsive">
                         <table class="table table-hover">
                             <thead class="text-warning">
-                                <th>#</th>
-                                <th>Naam</th>
-                                <th>Tarief</th>
+                                <th>Richting</th>
+                                <th>Periode</th>
+                                <th>Download</th>
                             </thead>
                             <tbody>
 
                                 <?php
-                                $sql = "SELECT * FROM document GROUP BY document_id";
+                                $sql = "SELECT * FROM rooster, richting where rooster.rooster_richting = richting.richting_id GROUP BY rooster_id";
                                 $result = $conn->query($sql);
 
                                 if ($result->num_rows > 0) {
@@ -67,11 +73,10 @@
                                     while ($row = $result->fetch_assoc()) {
                                 ?>
                                         <tr>
-                                            <td><?php echo $row['document_id']; ?></td>
-                                            <td><?php echo $row['document_naam']; ?></td>
-                                            <td><?php echo $row['document_tarief']; ?></td>
+                                            <td><?php echo $row['richting_naam']; ?></td>
+                                            <td><?php echo $row['rooster_periode']; ?></td>
                                             <td>
-                                                <!-- <a href="../../docs/<?php echo $row['document_path']; ?>" target="blank"><i class="material-icons">launch</i></a> -->
+                                                <a href="../../docs/<?php echo $row['rooster_path']; ?>" target="blank"><i class="material-icons">launch</i></a>
                                                 <!-- <a href="#" class="delete" data-id="<?php echo $row['document_id']; ?>"><i class="material-icons text-danger">delete</i></a> -->
                                             </td>
                                         </tr>
