@@ -43,7 +43,16 @@
                                                 <td><?php echo $row['document_tarief']; ?></td>
                                                 <td>
                                                     <a href="../../docs/<?php echo $row['document_path']; ?>" target="blank"><i class="material-icons">launch</i></a>
-                                                    <!-- <a href="#" class="delete" data-id="<?php echo $row['document_id']; ?>"><i class="material-icons text-danger">delete</i></a> -->
+                                                    <!-- saldo berekening ga je verder?
+                                                                            $sql = "SELECT  * FROM studenten, document ";
+                                                                            if ($conn->query($sql) === TRUE) {
+                                                                                echo $row['document_path'];
+                                                                                $tarief = $row['document_tarief'];
+                                                                                $saldo = $row['student_saldo'];
+                                                                                $substract = ($saldo - $tarief);
+                                                                                $sql1 = "INSERT INTO `studenten` (student_saldo) VALUES ($substract)";
+                                                                            } else {
+                                                                            } -->
                                                 </td>
 
 
