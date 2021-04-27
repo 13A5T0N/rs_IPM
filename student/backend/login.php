@@ -8,10 +8,11 @@ include "../../config/db_conn.php";;
      $qrcode = $_POST ['qrcode'];
      $arr = explode('|', $qrcode);
 
-     $username = $arr[1];
-     $pass = $arr[2];
+     //$username = $arr[1];
+     //$pass = $arr[2];
+     $email = $arr[1];
 
-     $sql = "SELECT * FROM studenten WHERE student_naam = '$username' AND student_password = '$pass'";
+     $sql = "SELECT * FROM studenten WHERE student_email = '$email'";
 
      $resultSQL = mysqli_query($conn, $sql);
 

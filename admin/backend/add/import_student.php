@@ -1,5 +1,8 @@
 <?php
 include "../../../config/db_conn.php";
+require "../../../vendor/autoload.php";
+include '../../studentenkaart.php';
+
 session_start();
 $filename = $_FILES["filename"]["name"];
 // check file extension
@@ -19,6 +22,7 @@ if (move_uploaded_file($_FILES["filename"]["tmp_name"], '../../../docs/' . $file
                         VALUES ('$emapData[3]','$emapData[4]', '$emapData[1]','$emapData[0]',
                         $emapData[2],'$emapData[5]','$emapData[6]','$emapData[7]'
                         ,'$emapData[8]','$emapData[9]')";
+
                   $conn->query($sql);
             }
         }

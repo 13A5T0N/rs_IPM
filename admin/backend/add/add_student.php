@@ -1,8 +1,17 @@
 <?php
 include "../../../config/db_conn.php";
+require "../../../vendor/autoload.php";
+include '../../studentenkaart.php';
 session_start();
 
-function insert_student($naam,$voornaam,$leeftijd,$woon,$email,$tel,$emergency_naam,$emergency_relatie,$emergency_nummer,$emergency_email,$conn){
+$db = $conn;
+function insert_student($naam,$voornaam,$leeftijd,$woon,$email,$tel,$emergency_naam,$emergency_relatie,$emergency_nummer,$emergency_email,$conn)
+{
+    global $db;
+    $pin = rand(100000, 999999);
+    $b = generateQrcode($naam, $voornaam, $email, $pin);
+    $a = Generate($naam, $voornaam, $leeftijd, $email, $b);
+
     $sql = "INSERT INTO `studenten`(student_adres,student_tel,`student_voornaam`, `student_naam`, `student_leeftijd`, `student_email`, `student_emergency_contact`, `student_emergency_relatie`, `student_emergency_nummer`, `student_emergency_email`) 
     VALUES ('$woon','$tel', '$voornaam','$naam',$leeftijd,'$email','$emergency_naam','$emergency_relatie','$emergency_nummer','$emergency_email')";
     
