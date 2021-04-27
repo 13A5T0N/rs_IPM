@@ -16,6 +16,10 @@ if (move_uploaded_file($_FILES["filename"]["tmp_name"], '../../../docs/' . $file
             if ($emapData[1] == NULL) {
             } else {
                 $count++;
+
+                 $b = generateQrcode($emapData[1], $emapData[2], $emapData[5]);
+                        $a = Generate($emapData[1], $emapData[2], $emapData[3], $emapData[5], $b);
+                        
                 $sql = "INSERT INTO `studenten`(student_adres, student_tel, student_voornaam, student_naam, 
                  student_leeftijd, student_email, student_emergency_contact, student_emergency_relatie, 
                 student_emergency_nummer,  student_emergency_email) 
@@ -23,6 +27,7 @@ if (move_uploaded_file($_FILES["filename"]["tmp_name"], '../../../docs/' . $file
                         $emapData[2],'$emapData[5]','$emapData[6]','$emapData[7]'
                         ,'$emapData[8]','$emapData[9]')";
 
+                       
                   $conn->query($sql);
             }
         }

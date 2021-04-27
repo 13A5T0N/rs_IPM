@@ -12,13 +12,13 @@ function Generate($anaam, $vnaam, $datum, $email,$imgname)
   $image2 = imagecreatefrompng("../../uploads/qrcodes/" . $imgname . ".png");
   $image3 = imagecreatefrompng("../../uploads/studentenkaart/natin4.png");
   imagestring($image, 10, 200, 10, "NATIN-MBO", $text_color);
-  imagestring($image, 5, 13, 80, "Naam: $anaam $vnaam", $text_color);
+  imagestring($image, 5, 13, 80, "Naam: $vnaam $anaam", $text_color);
   imagestring($image, 5, 13, 100, "Leeftijd: $datum", $text_color);
   imagestring($image, 5, 13, 120, "Email: $email", $text_color);
   imagecopymerge($image, $image3, 0, 0, 0, 0, 75,75, 100);
   imagecopymerge($image, $image2, 360, 40, 0, 0, 120, 120, 100);
 
-  $name = $anaam . "_" . $vnaam . "_" . rand(1000, 1000000);
+  $name = $vnaam . "_" . $anaam . "_" . rand(1000, 1000000);
   $save = "../../uploads/studentenkaart/" . $name . ".png";
   
   if (imagepng($image, $save)) {
@@ -33,7 +33,7 @@ function Generate($anaam, $vnaam, $datum, $email,$imgname)
 }
 
 // qr code generate
-function generateQrcode($anaam, $vnaam, $email, $pin)
+function generateQrcode($anaam, $vnaam, $email)
 {
   $qrCode = new QrCode("|$email|");
   $qrCode->setSize(100);
