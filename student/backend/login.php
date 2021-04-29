@@ -20,7 +20,7 @@ include "../../config/db_conn.php";;
 
      if(mysqli_num_rows($resultSQL) > 0)
      {
-       $_SESSION['student_naam'] = $result['student_naam'];
+       $_SESSION['student_nr'] = $result['student_nr'];
        
 
        header("location:../view/index_stud.php");

@@ -101,10 +101,9 @@ session_start();
                                     <p class="d-lg-none d-md-block">Account</p>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                                    <a class="dropdown-item" href="#">Profile</a>
-                                    <a class="dropdown-item" href="#">Settings</a>
+                                    <!-- <a class="dropdown-item" href="#"><?= $_SESSION['student_naam'] ?></a> -->
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Log out</a>
+                                    <a class="dropdown-item" href="../../student/backend/logout.php">Log out</a>
                                 </div>
                             </li>
                         </ul>

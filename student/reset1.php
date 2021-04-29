@@ -22,7 +22,7 @@ $hash = password_hash($new, PASSWORD_DEFAULT);
 if ($pwd == $new) {
     $sql = "UPDATE `studenten` SET `student_password`='$hash' WHERE student_nr =".$_SESSION["user"]." ";
     if ($conn->query($sql) === TRUE) {
-        header("location:../student/view/admin.php?status=2");
+        header("location:../student/view/index_stud.php?status=2");
     } else {
         header("location:../../RS_IPM/student/reset2.php?status=4");
     }

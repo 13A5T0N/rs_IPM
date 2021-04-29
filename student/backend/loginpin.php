@@ -41,6 +41,6 @@ if ($status == 0) {
             header("location:../view/index_stud.php?status=1");
         }
     } else {
-        header("location:../view/index_stud.php?status=0");
+        header("location:../../index.php?status=0");
     }
 }
