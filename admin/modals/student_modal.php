@@ -358,3 +358,56 @@ include "../includes/scripts.php";
     </div>
 </div>
 </div>
+
+<!-- money Modal -->
+<div class="modal fade" id="money">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h4 class="text-center">Saldo Opwaarderen</h4>
+                <hr class="bg-dark col-10">
+                <!-- personal info -->
+                <form action="../backend/add/add_money.php" method="post" autocomplete="off">
+                    <div class="row">
+                        <div class="col-sm-12 ">
+                            <h3 class="text-center"><strong>Hoeveel wilt u opwaarderen?</strong> </h3>
+                            <!-- <h4 class="text-left"><strong>SRD</strong> </h4> -->
+                            <h4 class="text-left"><strong>SRD</strong></h4><input type="text" id="amount" name="amount">
+                            <input type="hidden" name="money_id" id="money_id">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success" name="add">Opwaarderen</button>
+                </form>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- delete Modal -->
+<div class="modal fade" id="delete">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <h4 class="text-center">Vewijder student account</h4>
+                <hr class="bg-dark col-10">
+                <!-- personal info -->
+                <form action="../backend/delete/delete_student.php" method="post" autocomplete="off">
+                    <div class="row">
+                        <div class="col-sm-12 ">
+                            <h3 class="text-center"><strong>Bent u zeker?</strong> </h3>
+                            <h4 class="text-center"><strong>U kunt dit niet ongedaan maken!</strong> </h4>
+                            <input type="hidden" name="delete_id" id="delete_id">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-warning" name="add">Verwijderen</button>
+                </form>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

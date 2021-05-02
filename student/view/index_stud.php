@@ -5,13 +5,13 @@
         <!-- cards -->
         <div class="row">
             <!-- Upcoming classes -->
-            <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="col-lg-4 col-md-4 col-sm-4">
                 <div class="card card-stats">
                     <div class="card-header card-header-warning card-header-icon">
                         <div class="card-icon">
                             <i class="material-icons">attachment</i>
                         </div>
-                        <p class="card-category">Recente geuploade cijfers</p>
+                        <p class="card-category">Recent geuploade cijfers</p>
                         <h3 class="card-title"> <?php $result = mysqli_query($conn, "SELECT COUNT(cf_student) as total FROM cijfers_student");
                                                 $data = mysqli_fetch_assoc($result);
                                                 echo $data['total']; ?>
@@ -25,15 +25,36 @@
                 </div>
             </div>
             <!-- Recent updated documents -->
-            <div class="col-lg-6 col-md-6 col-sm-6">
+            <div class="col-lg-4 col-md-4 col-sm-4">
                 <div class="card card-stats">
                     <div class="card-header card-header-info card-header-icon">
                         <div class="card-icon">
                             <i class="material-icons">web_asset</i>
                         </div>
-                        <p class="card-category">Recente geuploade documenten</p>
+                        <p class="card-category">Recent geuploade documenten</p>
                         <h3 class="card-title">
                             <?php $result = mysqli_query($conn, "SELECT COUNT(document_id) as total FROM document");
+                            $data = mysqli_fetch_assoc($result);
+                            echo $data['total']; ?>
+                        </h3>
+                    </div>
+                    <div class="card-footer">
+                        <div class="stats">
+                            <i class="material-icons">update</i> Just Updated
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Huidige Saldo -->
+            <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="card card-stats">
+                    <div class="card-header card-header-success card-header-icon">
+                        <div class="card-icon">
+                            <i class="material-icons">money</i>
+                        </div>
+                        <p class="card-category">Huidige Saldo</p>
+                        <h3 class="card-title">
+                            <?php $result = mysqli_query($conn, "SELECT student_saldo as total from studenten where student_nr = 2");
                             $data = mysqli_fetch_assoc($result);
                             echo $data['total']; ?>
                         </h3>
@@ -88,10 +109,6 @@
 
                             </tbody>
                         </table>
-
-
-
-
                     </div>
                 </div>
             </div>

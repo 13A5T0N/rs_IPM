@@ -42,7 +42,7 @@
                                                 <td><?php echo $row['document_naam']; ?></td>
                                                 <td><?php echo $row['document_tarief']; ?></td>
                                                 <td>
-                                                    <a href="../../docs/<?php echo $row['document_path']; ?>" target="blank"><i class="material-icons">launch</i></a>
+                                                    <a href="download.php?file=../../docs/<?php echo $row['document_path']; ?>" target="blank"><i class="material-icons">download</i></a>
                                                     <!-- saldo berekening ga je verder?
                                                                             $sql = "SELECT  * FROM studenten, document ";
                                                                             if ($conn->query($sql) === TRUE) {

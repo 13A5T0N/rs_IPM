@@ -42,7 +42,7 @@
                                                 <td>
                                                     <a href="../../docs/<?php echo $row['document_path']; ?>" target="blank"><i class="material-icons">visibility</i></a>
 
-                                                    
+
                                                 </td>
                                             </tr>
                                     <?php
