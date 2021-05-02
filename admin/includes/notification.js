@@ -58,6 +58,17 @@ function error() {
     });
   }
 
+    function saldo() {
+      Swal.fire({
+        position: "top-end",
+        icon: "warning",
+        title: "Student Saldo toegevoegd",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+
+  }
+
   function student_ad() {
     Swal.fire({
       position: "top-end",
