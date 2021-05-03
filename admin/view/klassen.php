@@ -6,15 +6,15 @@ include "../includes/errors.php"; ?>
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-success">
-                        <h4 class="card-title ">Klassen Tabel</h4>
-                        <p class="card-category"><button type="button" class="btn btn-info" data-toggle="modal" data-target="#add">
+                        <h4 class="card-title text-uppercase font-weight-bold space">Klassen Tabel</h4>
+                        <p class="card-category"><button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#add">
                                 Klas Toevoegen
                             </button></p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
-                                <thead>
+                                <thead class="text-warning">
                                     <th>
                                         #
                                     </th>
@@ -22,10 +22,10 @@ include "../includes/errors.php"; ?>
                                         Naam
                                     </th>
                                     <th>
-                                        jaar
+                                        Jaar
                                     </th>
                                     <th>
-                                        ricting
+                                        Ricting
                                     </th>
                                     <th>
                                         Acties
@@ -76,7 +76,7 @@ include "../includes/errors.php"; ?>
                         <div class="row">
                             <div class="col-sm-12 ">
                                 <h3 class="text-center"><strong style="text-align: center;">Bent u zeker?</strong> </h3>
-                                 <h3 class="text-center"><strong style="text-align: center;">U kunt dit niet ongedaan maken!</strong> </h3>
+                                <h3 class="text-center"><strong style="text-align: center;">U kunt dit niet ongedaan maken!</strong> </h3>
                                 <input type="hidden" name="delete_id" id="delete_id">
                             </div>
                         </div>

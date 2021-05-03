@@ -12,7 +12,7 @@
                             <i class="material-icons">attachment</i>
                         </div>
                         <p class="card-category">Documenten</p>
-                        <h3 class="card-title">50
+                        <h3 class="card-title float-right">50
                         </h3>
                     </div>
                     <div class="card-footer">
@@ -30,7 +30,7 @@
                             <i class="material-icons">perm_identity</i>
                         </div>
                         <p class="card-category">Studenten</p>
-                        <h3 class="card-title">220</h3>
+                        <h3 class="card-title float-right">220</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
@@ -48,7 +48,7 @@
                             <i class="material-icons">portrait</i>
                         </div>
                         <p class="card-category">Docenten</p>
-                        <h3 class="card-title">75</h3>
+                        <h3 class="card-title float-right">75</h3>
                     </div>
                     <div class="card-footer">
                         <div class="stats">
@@ -135,7 +135,7 @@
                 <div class="card">
                     <div class="card-header card-header-warning">
                         <h4 class="card-title">Document aanvraag</h4>
-                       
+
                     </div>
                     <div class="card-body table-responsive">
                         <table class="table table-hover">

@@ -4303,7 +4303,6 @@ tbody.collapse.show {
 .nav {
   display: flex;
   flex-wrap: wrap;
-  padding-left: 0;
   margin-bottom: 0;
   list-style: none;
 }
@@ -18426,6 +18425,11 @@ html[dir="rtl"] .form-check .form-check-sign .check:before {
 }
 
 .card .card-title {
+  margin-top: 0.625rem;
+  float: left;
+  padding: 15px 20px;
+}
+.card .card-title2 {
   margin-top: 0.625rem;
 }
 

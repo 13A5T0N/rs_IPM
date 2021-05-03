@@ -8,15 +8,15 @@ include "../includes/errors.php";
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-success">
-                        <h4 class="card-title ">Admin Tabel</h4>
-                        <p class="card-category"><button type="button" class="btn btn-info" data-toggle="modal" data-target="#add">
+                        <h4 class="card-title text-uppercase font-weight-bold space">Admin Tabel</h4>
+                        <p class="card-category"><button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#add">
                                 Admin Toevoegen
                             </button></p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
-                                <thead>
+                                <thead class="text-warning">
                                     <th>
                                         #
                                     </th>
@@ -56,7 +56,6 @@ include "../includes/errors.php";
                                     <?php
                                         }
                                     } else {
-                                        
                                     }
                                     ?>
 
@@ -82,7 +81,7 @@ include "../includes/errors.php";
                             <div class="col-sm-12 ">
                                 <h3 class="text-center"><strong>Bent u zeker?</strong> </h3>
                                 <h4 class="text-center"><strong>U kunt dit niet ongedaan maken!</strong> </h3>
-                                <input type="hidden" name="delete_id" id="delete_id">
+                                    <input type="hidden" name="delete_id" id="delete_id">
                             </div>
                         </div>
                         <div class="modal-footer">

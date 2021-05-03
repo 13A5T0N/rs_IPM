@@ -6,15 +6,15 @@ include "../includes/errors.php"; ?>
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-success">
-                        <h4 class="card-title ">Richting Tabel</h4>
-                        <p class="card-category"><button type="button" class="btn btn-info" data-toggle="modal" data-target="#add">
+                        <h4 class="card-title text-uppercase font-weight-bold space">Richting Tabel</h4>
+                        <p class="card-category"><button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#add">
                                 Richting Toevoegen
                             </button></p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
-                                <thead>
+                                <thead class="text-warning">
                                     <th>
                                         #
                                     </th>
@@ -22,7 +22,7 @@ include "../includes/errors.php"; ?>
                                         Naam
                                     </th>
                                     <th>
-                                        afkorting
+                                        Afkorting
                                     </th>
                                     <th>
                                         Acties
@@ -50,7 +50,6 @@ include "../includes/errors.php"; ?>
                                     <?php
                                         }
                                     } else {
-                                        
                                     }
                                     ?>
 
@@ -62,8 +61,8 @@ include "../includes/errors.php"; ?>
             </div>
         </div>
     </div>
- <!-- delete Modal -->
- <div class="modal fade" id="delete">
+    <!-- delete Modal -->
+    <div class="modal fade" id="delete">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body">
@@ -87,52 +86,52 @@ include "../includes/errors.php"; ?>
         </div>
     </div>
 </div>
-    <?php include "../includes/scripts.php";
-    include "../modals/richting_modal.php"; ?>
+<?php include "../includes/scripts.php";
+include "../modals/richting_modal.php"; ?>
 
-    <script>
-        $(document).on('click', '.view', function(e) {
-            var id = $(this).data('id');
-            $('#view').modal('show');
-            get_row(id);
+<script>
+    $(document).on('click', '.view', function(e) {
+        var id = $(this).data('id');
+        $('#view').modal('show');
+        get_row(id);
+    });
+
+    $(document).on('click', '.edit', function(e) {
+        var id = $(this).data('id');
+        $('#edit').modal('show');
+        get_row(id);
+    });
+
+    $(document).on('click', '.delete', function(e) {
+        var id = $(this).data('id');
+        $('#delete').modal('show');
+        get_row(id);
+    });
+    document.addEventListener("DOMContentLoaded", function(event) {
+
+        var element = document.getElementById("richting");
+        element.classList.add("active");
+    });
+
+    function get_row(id) {
+        $.ajax({
+            type: 'POST',
+            url: '../backend/get/get_richting.php',
+            data: {
+                id: id
+            },
+            dataType: 'json',
+            success: function(response) {
+                $('#view_naam').val(response.richting_naam);
+                $('#view_afk').val(response.richting_afkorting);
+
+                $('#edit_naam').val(response.richting_naam);
+                $('#edit_afk').val(response.richting_afkorting);
+                $('#edit_id').val(response.richting_id)
+
+
+                $('#delete_id').val(response.richting_id)
+            }
         });
-
-        $(document).on('click', '.edit', function(e) {
-            var id = $(this).data('id');
-            $('#edit').modal('show');
-            get_row(id);
-        });
-
-        $(document).on('click', '.delete', function(e) {
-            var id = $(this).data('id');
-            $('#delete').modal('show');
-            get_row(id);
-        });
-        document.addEventListener("DOMContentLoaded", function(event) {
-
-            var element = document.getElementById("richting");
-            element.classList.add("active");
-        });
-
-        function get_row(id) {
-            $.ajax({
-                type: 'POST',
-                url: '../backend/get/get_richting.php',
-                data: {
-                    id: id
-                },
-                dataType: 'json',
-                success: function(response) {
-                    $('#view_naam').val(response.richting_naam);
-                    $('#view_afk').val(response.richting_afkorting);
-
-                    $('#edit_naam').val(response.richting_naam);
-                    $('#edit_afk').val(response.richting_afkorting);
-                    $('#edit_id').val(response.richting_id)
-
-
-                    $('#delete_id').val(response.richting_id)
-                }
-            });
-        }
-    </script>
+    }
+</script>

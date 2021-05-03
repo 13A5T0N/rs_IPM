@@ -12,9 +12,9 @@
                             <i class="material-icons">attachment</i>
                         </div>
                         <p class="card-category">Recent geuploade cijfers</p>
-                        <h3 class="card-title"> <?php $result = mysqli_query($conn, "SELECT COUNT(cf_student) as total FROM cijfers_student");
-                                                $data = mysqli_fetch_assoc($result);
-                                                echo $data['total']; ?>
+                        <h3 class="card-title float-right"> <?php $result = mysqli_query($conn, "SELECT COUNT(cf_student) as total FROM cijfers_student");
+                                                            $data = mysqli_fetch_assoc($result);
+                                                            echo $data['total']; ?>
                         </h3>
                     </div>
                     <div class="card-footer">
@@ -32,7 +32,7 @@
                             <i class="material-icons">web_asset</i>
                         </div>
                         <p class="card-category">Recent geuploade documenten</p>
-                        <h3 class="card-title">
+                        <h3 class="card-title float-right">
                             <?php $result = mysqli_query($conn, "SELECT COUNT(document_id) as total FROM document");
                             $data = mysqli_fetch_assoc($result);
                             echo $data['total']; ?>
@@ -53,10 +53,27 @@
                             <i class="material-icons">money</i>
                         </div>
                         <p class="card-category">Huidige Saldo</p>
-                        <h3 class="card-title">
-                            <?php $result = mysqli_query($conn, "SELECT student_saldo as total from studenten where student_nr = 2");
-                            $data = mysqli_fetch_assoc($result);
-                            echo $data['total']; ?>
+                        <h3 class="card-title float-right">
+                            <?php
+                            $id = $_SESSION['student_nr'];
+                            $result1 = mysqli_query($conn, "SELECT student_saldo from studenten where student_nr");
+                            $data1 = mysqli_fetch_assoc($result1);
+                            echo $data1['student_saldo'];
+
+
+
+                            // $sql = "SELECT * FROM studenten where student_nr = $id";
+                            // $result1 = mysqli_query($conn, $sql);
+
+                            // if (mysqli_num_rows($result1) > 0) {
+                            //     // output data of each row
+                            //     while ($row = mysqli_fetch_assoc($result1)) {
+                            //         echo  $row['student_saldo'];
+                            //     }
+                            // }
+
+
+                            ?>
                         </h3>
                     </div>
                     <div class="card-footer">
@@ -73,8 +90,8 @@
             <!-- log -->
             <div class="col-lg-12 col-md-12">
                 <div class="card">
-                    <div class="card-header card-header-success">
-                        <h4 class="card-title">Recente Roosters</h4>
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title2 text-uppercase font-weight-bold space">Recente Roosters</h4>
                     </div>
                     <div class="card-body table-responsive">
                         <table class="table table-hover">

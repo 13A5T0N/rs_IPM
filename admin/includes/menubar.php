@@ -22,80 +22,81 @@ session_start();
                     <li class="nav-item" id="dash">
                         <a class="nav-link" href="../view/index.php">
                             <i class="material-icons">dashboard</i>
-                            <p style="font-size: 15px;"> Dashboard</p>
+                            <p class="text-uppercase font-weight-bold space"> Dashboard</p>
                         </a>
                     </li>
 
                     <div id="account">
-                        <li class="header" style="margin-left: 15px; color:white; margin-top: 15px">
+                        <li class="header text-uppercase font-weight-bold" style="margin-left: 36px; color:white; margin-top: 15px;  margin-bottom: 15px">
                             <strong>Accounts</strong>
                         </li>
-                        <li class="nav-item" style="margin-top:-15px;" id="admin">
+                        <li class="nav-item" style="margin-top:-10px;" id="admin">
                             <a class="nav-link" href="../view/admin.php?status=0">
                                 <i class="material-icons" style="font-size: 25px;">account_box</i>
-                                <p>Admin</p>
+                                <p class="text-uppercase space">Admin</p>
                             </a>
                         </li>
-                        <li class="nav-item" style="margin-top:-25px;" id="studenten">
+                        <li class="nav-item" style="margin-top:-5px;" id="studenten">
                             <a class="nav-link" href="../view/studenten.php?status=0">
                                 <i class="material-icons" style="font-size: 25px;">perm_identity</i>
-                                <p>Studenten</p>
+                                <p class="text-uppercase space">Studenten</p>
                             </a>
                         </li>
-                        <li class="nav-item" style="margin-top:-25px;" id="docenten">
+                        <li class="nav-item" style="margin-top:-5px;" id="docenten">
                             <a class="nav-link" href="../view/docenten.php?status=0">
                                 <i class="material-icons" style="font-size: 25px;">portrait</i>
-                                <p>Docenten</p>
+                                <p class="text-uppercase space">Docenten</p>
+                            </a>
+                        </li>
+
+
+                        <li class="nav-item " style="margin-top:-5px;" id="cijferlijst">
+                            <a class="nav-link" href="../view/cijfers.php?status=0">
+                                <i class="material-icons"> ballot</i>
+                                <p class="text-uppercase space">Cijfers</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item " style="margin-top:-5px;" id="documenten">
+                            <a class="nav-link" href="../view/documenten.php?status=0">
+                                <i class="material-icons">attachment</i>
+                                <p class="text-uppercase space">Documenten</p>
                             </a>
                         </li>
                     </div>
 
-                    <li class="nav-item " id="cijferlijst">
-                        <a class="nav-link" href="../view/cijfers.php?status=0">
-                            <i class="material-icons"> ballot</i>
-                            <p>Cijfers</p>
-                        </a>
-                    </li>
-
-                    <li class="nav-item " id="documenten">
-                        <a class="nav-link" href="../view/documenten.php?status=0">
-                            <i class="material-icons">attachment</i>
-                            <p>Documenten</p>
-                        </a>
-                    </li>
-
                     <div id="school">
-                        <li class="header" style="margin-left: 10px; color:white; margin-top: 15px">
+                        <li class="header text-uppercase font-weight-bold" style="margin-left: 36px; color:white; margin-top: 15px; margin-bottom: 15px">
                             <strong>School</strong>
                         </li>
-                        <li class="nav-item " style="margin-top:-15px;" id="roosters">
+                        <li class="nav-item " style="margin-top:-10px;" id="roosters">
                             <a class="nav-link" href="../view/rooster.php?status=0">
                                 <i class="material-icons">text_snippet</i>
-                                <p>Roosters</p>
+                                <p class="text-uppercase space">Roosters</p>
                             </a>
                         </li>
-                        <li class="nav-item " style="margin-top:-25px;" id="richting">
+                        <li class="nav-item " style="margin-top:-5px;" id="richting">
                             <a class="nav-link" href="../view/richtingen.php?status=0">
                                 <i class="material-icons">web_asset</i>
-                                <p>Richtingen</p>
+                                <p class="text-uppercase space">Richtingen</p>
                             </a>
                         </li>
-                        <li class="nav-item " style="margin-top:-25px;" id="klas">
+                        <li class="nav-item " style="margin-top:-5px;" id="klas">
                             <a class="nav-link" href="../view/klassen.php?status=0">
                                 <i class="material-icons">list_alt</i>
-                                <p>klassen</p>
+                                <p class="text-uppercase space">klassen</p>
                             </a>
                         </li>
-                        <li class="nav-item " style="margin-top:-25px;" id="formaties">
+                        <li class="nav-item " style="margin-top:-5px;" id="formaties">
                             <a class="nav-link" href="../view/formaties.php?status=0">
                                 <i class="material-icons">assignment_ind</i>
-                                <p>klassen Formaties</p>
+                                <p class="text-uppercase space">klassen Formaties</p>
                             </a>
                         </li>
-                        <li class="nav-item " style="margin-top:-25px;" id="vak">
+                        <li class="nav-item " style="margin-top:-5px;" id="vak">
                             <a class="nav-link" href="../view/vakken.php?status=0">
                                 <i class="material-icons">book</i>
-                                <p>Vakken</p>
+                                <p class="text-uppercase space">Vakken</p>
                             </a>
                         </li>
 
@@ -106,7 +107,7 @@ session_start();
             </div>
         </div>
         <div class="main-panel">
-           <!-- <br>  -->
+            <!-- <br>  -->
             <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top">
                 <div class="container-fluid">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -119,7 +120,7 @@ session_start();
 
                         <ul class="navbar-nav">
 
-                          
+
                             <li class="nav-item dropdown">
                                 <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="material-icons">person</i>
@@ -133,4 +134,3 @@ session_start();
                     </div>
                 </div>
             </nav>
-         

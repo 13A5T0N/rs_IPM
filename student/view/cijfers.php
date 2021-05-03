@@ -5,23 +5,23 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-success">
-                        <h4 class="card-title ">Cijfers Tabel</h4>
+                        <h4 class="card-title2 text-uppercase font-weight-bold space">Cijfers Tabel</h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
-                                <thead>
+                                <thead class="text-warning">
                                     <th>
                                         #
                                     </th>
                                     <th>
-                                        klas
+                                        Klas
                                     </th>
                                     <th>
-                                        vak
+                                        Vak
                                     </th>
                                     <th>
-                                        uploaded
+                                        Bekijken
                                     </th>
 
                                 </thead>

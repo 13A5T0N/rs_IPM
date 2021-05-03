@@ -6,15 +6,15 @@ include "../includes/errors.php"; ?>
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-success">
-                        <h4 class="card-title ">Vakken Tabel</h4>
-                        <p class="card-category"><button type="button" id="add" class="btn btn-info" data-toggle="modal" data-target="#delete">
+                        <h4 class="card-title text-uppercase font-weight-bold space">Vakken Tabel</h4>
+                        <p class="card-category"><button type="button" id="add" class="btn btn-info float-right" data-toggle="modal" data-target="#delete">
                                 Vak Toevoegen
                             </button></p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
-                                <thead>
+                                <thead class="text-warning">
                                     <th>
                                         #
                                     </th>
@@ -22,7 +22,7 @@ include "../includes/errors.php"; ?>
                                         Naam
                                     </th>
                                     <th>
-                                        afkorting
+                                        Afkorting
                                     </th>
                                     <th>
                                         Acties

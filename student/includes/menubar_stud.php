@@ -19,51 +19,26 @@ session_start();
             </div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
-                    <li class="nav-item" id="dash">
+                    <li class="nav-item" style="margin-top:-5px;" id="dash">
                         <a class="nav-link" href="../view/index_stud.php">
                             <i class="material-icons">dashboard</i>
-                            <p style="font-size: 15px;"> Profiel</p>
+                            <p class="text-uppercase font-weight-bold space"> Profiel</p>
                         </a>
                     </li>
 
-                    <!-- <div id="account">
-                        <li class="header" style="margin-left: 15px; color:white; margin-top: 15px">
-                            <strong>Accounts</strong>
-                        </li>
-                        <li class="nav-item" style="margin-top:-25px;" id="studenten">
-                            <a class="nav-link" href="../view/studenten.php">
-                                <i class="material-icons" style="font-size: 25px;">perm_identity</i>
-                                <p>Student</p>
-                            </a>
-                        </li>
-                        <li class="nav-item" style="margin-top:-25px;" id="docenten">
-                            <a class="nav-link" href="../view/docenten.php">
-                                <i class="material-icons" style="font-size: 25px;">portrait</i>
-                                <p>Docenten</p>
-                            </a>
-                        </li>
-                    </div> -->
-
-                    <li class="nav-item " id="cijferlijst">
+                    <li class="nav-item " style="margin-top:-5px;" id="cijferlijst">
                         <a class="nav-link" href="../view/cijfers.php">
                             <i class="material-icons"> ballot</i>
-                            <p>Cijfers</p>
+                            <p class="text-uppercase font-weight-bold space">Cijfers</p>
                         </a>
                     </li>
 
-                    <li class="nav-item " id="documenten">
+                    <li class="nav-item " style="margin-top:-5px;" id="documenten">
                         <a class="nav-link" href="../view/documenten.php">
                             <i class="material-icons">attachment</i>
-                            <p>Documenten</p>
+                            <p class="text-uppercase font-weight-bold space">Documenten</p>
                         </a>
                     </li>
-
-                    <!-- <li class="nav-item ">
-                        <a class="nav-link" href="../view/settings.php">
-                            <i class="material-icons">settings</i>
-                            <p>Settings</p>
-                        </a>
-                    </li> -->
                 </ul>
             </div>
         </div>

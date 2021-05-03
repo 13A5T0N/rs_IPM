@@ -5,24 +5,24 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-success">
-                        <h4 class="card-title ">Documenten</h4>
-                        <p class="card-category">documenten overzicht</p>
+                        <h4 class="text-uppercase font-weight-bold space">Documenten</h4>
+                        <p class="card-category">Documenten overzicht</p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
-                                <thead>
+                                <thead class="text-warning">
                                     <th>
                                         #
                                     </th>
                                     <th>
-                                        naam
+                                        Naam
                                     </th>
                                     <th>
-                                        tarief
+                                        Tarief
                                     </th>
                                     <th>
-                                        uploaded
+                                        Downloaden
                                     </th>
                                     <!-- <th>
                                         Acties
@@ -42,17 +42,32 @@
                                                 <td><?php echo $row['document_naam']; ?></td>
                                                 <td><?php echo $row['document_tarief']; ?></td>
                                                 <td>
-                                                    <a href="download.php?file=../../docs/<?php echo $row['document_path']; ?>" target="blank"><i class="material-icons">download</i></a>
-                                                    <!-- saldo berekening ga je verder?
-                                                                            $sql = "SELECT  * FROM studenten, document ";
-                                                                            if ($conn->query($sql) === TRUE) {
-                                                                                echo $row['document_path'];
-                                                                                $tarief = $row['document_tarief'];
-                                                                                $saldo = $row['student_saldo'];
-                                                                                $substract = ($saldo - $tarief);
-                                                                                $sql1 = "INSERT INTO `studenten` (student_saldo) VALUES ($substract)";
-                                                                            } else {
-                                                                            } -->
+
+                                                    <?php
+
+                                                    // if (isset($_POST['btn-atc'])) {
+                                                    //     $sql = "SELECT  * FROM studenten, document";
+                                                    //     $result = mysqli_query($conn, $sql);
+
+                                                    //     if (mysqli_num_rows($result) > 0) {
+                                                    //         // output data of each row
+                                                    //         while ($row = mysqli_fetch_assoc($result)) {
+                                                    //             $saldo = $row["student_saldo"];
+                                                    //             $z = $row['document_tarief'];
+                                                    //             $substract = $saldo - $z;
+                                                    //         }
+                                                    //         $sql1 = "UPDATE studenten  set  student_saldo=$substract";
+                                                    //         $result = mysqli_query($conn, $sql1);
+                                                    //     }
+                                                    // }
+
+                                                    // 
+                                                    ?>
+
+
+                                                    <form method="post">
+                                                        <a href="download.php?file=../../docs/<?php echo $row['document_path']; ?>" target="blank"><i class="material-icons">download</i></a>
+                                                    </form>
                                                 </td>
 
 

@@ -6,15 +6,15 @@ include "../includes/errors.php"; ?>
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-success">
-                        <h4 class="card-title ">Rooster Tabel</h4>
-                        <p class="card-category"><button type="button" class="btn btn-info" data-toggle="modal" data-target="#add">
+                        <h4 class="card-title text-uppercase font-weight-bold space">Rooster Tabel</h4>
+                        <p class="card-category"><button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#add">
                                 Rooster Toevoegen
                             </button></p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
-                                <thead>
+                                <thead class="text-warning">
                                     <th>
                                         #
                                     </th>
