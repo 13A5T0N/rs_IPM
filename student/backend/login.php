@@ -19,7 +19,7 @@ if (!empty($_POST['qrcode'])) {
   $result = mysqli_fetch_array($resultSQL);
 
   if (mysqli_num_rows($resultSQL) > 0) {
-    // $_SESSION['student_nr'] = $result['student_nr'];
+    $_SESSION['student_nr'] = $result['student_nr'];
 
 
     header("location:../view/index_stud.php");
