@@ -113,7 +113,7 @@
                                             <td><?php echo $row['richting_naam']; ?></td>
                                             <td><?php echo $row['rooster_periode']; ?></td>
                                             <td>
-                                                <a href="../../docs/<?php echo $row['rooster_path']; ?>" target="blank"><i class="material-icons">launch</i></a>
+                                                <a href="../../docs/<?php echo $row['rooster_path']; ?>" target="blank"><i class="material-icons">visibility</i></a>
                                                 <!-- <a href="#" class="delete" data-id="<?php echo $row['document_id']; ?>"><i class="material-icons text-danger">delete</i></a> -->
                                             </td>
                                         </tr>
