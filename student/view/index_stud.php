@@ -55,7 +55,6 @@
                         <p class="card-category">Huidige Saldo</p>
                         <h3 class="card-title float-right">
                             <?php
-                            $id = $_SESSION['student_nr'];
                             $result1 = mysqli_query($conn, "SELECT student_saldo from studenten WHERE student_nr = '" . $_SESSION["user"] . "'");
                             $data1 = mysqli_fetch_assoc($result1);
                             echo $data1['student_saldo'];
