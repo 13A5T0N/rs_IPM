@@ -32,6 +32,9 @@ include "../includes/errors.php"; ?>
                                         Leeftijd
                                     </th>
                                     <th>
+                                        Saldo
+                                    </th>
+                                    <th>
                                         Acties
                                     </th>
                                 </thead>
@@ -50,6 +53,7 @@ include "../includes/errors.php"; ?>
                                                 <td><?php echo $row['student_naam']; ?></td>
                                                 <td><?php echo $row['student_email']; ?></td>
                                                 <td><?php echo $row['student_leeftijd']; ?></td>
+                                                <td><?php echo $row['student_saldo']; ?></td>
                                                 <td>
                                                     <a href="#" class="view" data-id="<?php echo $row['student_nr']; ?>"><i class="material-icons">launch</i></a>
                                                     <a href="#" class="edit" data-id="<?php echo $row['student_nr']; ?>"><i class="material-icons text-info">edit</i></a>
