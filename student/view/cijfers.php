@@ -12,9 +12,6 @@
                             <table class="table">
                                 <thead class="text-warning">
                                     <th>
-                                        #
-                                    </th>
-                                    <th>
                                         Klas
                                     </th>
                                     <th>
@@ -27,7 +24,11 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $sql = "select * from cijfers_klas, klassen, vak where cijfers_klas.cf_klas=klassen.klas_id";
+                                    $sql = "select * from cijfers_klas, klassen, vak,klas_formatie, klassen_formaties
+                                    where cijfers_klas.cf_klas=klassen.klas_id 
+                                    and klas_formatie.formatie_klas = klassen.klas_id
+                                    and  klas_formatie.formatie_id = klassen_formaties.formatie_id
+                                    and klf_stud = 2";
                                     $result = $conn->query($sql);
 
                                     if ($result->num_rows > 0) {
@@ -35,14 +36,11 @@
                                         while ($row = $result->fetch_assoc()) {
                                     ?>
                                             <tr>
-                                                <td><?php echo $row['cf_kl']; ?></td>
                                                 <td><?php echo $row['klas_naam']; ?></td>
                                                 <td><?php echo $row['vak_afkorting']; ?></td>
 
                                                 <td>
-                                                    <a href="../../docs/<?php echo $row['document_path']; ?>" target="blank"><i class="material-icons">visibility</i></a>
-
-
+                                                    <a href="cijfer_overzicht.php?klas=<?php echo $row['cf_kl']; ?>" target="blank"><i class="material-icons">visibility</i></a>
                                                 </td>
                                             </tr>
                                     <?php

@@ -38,7 +38,7 @@
           </div>
         </div>
       </div>
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto" style="margin-top: -15px">
 
         <a href="../rs_IPM/admin/log_in.php">
           <button class="btn btn-secondary btn-lg btn-block" type="button">
@@ -53,7 +53,7 @@
   </nav>
 
   <!-- main student login -->
-  <div class="container" id="container">
+  <div class="container mt-5" id="container">
     <div class="form-container sign-in-container">
 
       <div class="col-sm-12" style="text-align:center">
