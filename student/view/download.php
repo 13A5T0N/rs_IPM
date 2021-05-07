@@ -1,6 +1,33 @@
 <?php
+include "../../config/db_conn.php";
+// include_once "../includes/menubar_stud.php";
+session_start();
+
+
+
+if (isset($_GET['id'])) {
+    $id = mysqli_real_escape_string($conn, $_GET['id']);
+
+    $sql = "SELECT  * FROM studenten, document WHERE student_nr = '" . $_SESSION["user"] . "' AND document_id = $id";
+
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+        // output data of each row
+        while ($row = mysqli_fetch_assoc($result)) {
+            $saldo = $row["student_saldo"];
+            $doc = $row["document_tarief"];
+            $substract = $saldo - $doc;
+            echo $substract;
+        }
+        $sql1 = "UPDATE studenten  set  student_saldo=$substract  WHERE student_nr = '" . $_SESSION["user"] . "'";
+        $result = mysqli_query($conn, $sql1);
+    }
+    // echo $_SESSION["user"];
+}
 
 if (isset($_GET['file'])) {
+
     //Read the filename
     $filename = $_GET['file'];
     //Check the file exists or not

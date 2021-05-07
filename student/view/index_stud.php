@@ -57,22 +57,7 @@
                             <?php
                             $result1 = mysqli_query($conn, "SELECT student_saldo from studenten WHERE student_nr = '" . $_SESSION["user"] . "'");
                             $data1 = mysqli_fetch_assoc($result1);
-                            echo $data1['student_saldo'];
-
-
-
-                            // $sql = "SELECT * FROM studenten where student_nr = $id";
-                            // $result1 = mysqli_query($conn, $sql);
-
-                            // if (mysqli_num_rows($result1) > 0) {
-                            //     // output data of each row
-                            //     while ($row = mysqli_fetch_assoc($result1)) {
-                            //         echo  $row['student_saldo'];
-                            //     }
-                            // }
-
-
-                            ?>
+                            echo $data1['student_saldo']; ?>
                         </h3>
                     </div>
                     <div class="card-footer">

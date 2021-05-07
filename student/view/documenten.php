@@ -1,4 +1,7 @@
-<?php include "../includes/menubar_stud.php"; ?>
+<?php
+include_once "../includes/menubar_stud.php";
+// include "download.php";
+?>
 <div class="content">
     <div class="container-fluid">
         <div class="col-md-12">
@@ -43,27 +46,10 @@
                                                 <td><?php echo $doc = $row['document_tarief']; ?></td>
                                                 <td>
 
-                                                    <?php
 
-                                                    if (isset($_POST['btn-atc'])) {
-                                                        $sql = "SELECT  * FROM studenten, document WHERE student_nr = '" . $_SESSION["user"] . "'";
-                                                        $result = mysqli_query($conn, $sql);
 
-                                                        if (mysqli_num_rows($result) > 0) {
-                                                            // output data of each row
-                                                            while ($row = mysqli_fetch_assoc($result)) {
-                                                                $saldo = $row["student_saldo"];
-                                                                $substract = $saldo - $doc;
-                                                            }
-                                                            $sql1 = "UPDATE studenten  set  student_saldo=$substract  WHERE student_nr = '" . $_SESSION["user"] . "'";
-                                                            $result = mysqli_query($conn, $sql1);
-                                                        }
-                                                    }
-                                                    ?>
+                                                    <a href="download.php?id=<?php echo $row['document_id']; ?>&file=../../docs/<?php echo $row['document_path']; ?>" target="blank"><input type="button" name="btn-atc" value="download" class="material-icons"></input></a>
 
-                                                    <form method="post">
-                                                        <a href="download.php?file=../../docs/<?php echo $row['document_path']; ?>" target="blank"><input type="submit" name="btn-atc" value="download" class="material-icons"></input></a>
-                                                    </form>
                                                 </td>
 
 
