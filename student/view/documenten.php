@@ -48,7 +48,7 @@ include_once "../includes/menubar_stud.php";
 
 
 
-                                                    <a href="download.php?id=<?php echo $row['document_id']; ?>&file=../../docs/<?php echo $row['document_path']; ?>" target="blank"><input type="button" name="btn-atc" value="download" class="material-icons"></input></a>
+                                                    <a href="download.php?id=<?php echo $row['document_id']; ?>&file=../../docs/<?php echo $row['document_path']; ?>" target="blank"><i type="button" name="btn-atc" class="material-icons">download</i></a>
 
                                                 </td>
 
