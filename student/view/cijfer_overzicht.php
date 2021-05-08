@@ -1,47 +1,56 @@
-<?php include "../includes/menubar_stud.php"; ?>
+<?php include "../includes/session.php";
+include "../../config/db_conn.php";
+$klas = $_GET["klas"];
+function get_vak($conn, $klas)
+{
+    $sql = "select * from cijfers_klas, klassen, vak where cijfers_klas.cf_klas=klassen.klas_id and cf_kl = $klas";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while ($row = $result->fetch_assoc()) {
+            $return = $row["vak_naam"];
+        }
+    } else {
+      
+    }
+
+    return $return;
+}
+?>
 <div class="content">
     <div class="container-fluid">
         <div class="col-md-12">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-success">
-                        <h4 class="card-title2 text-uppercase font-weight-bold space">Cijfers Tabel</h4>
+                        <h4 class="card-title2 text-uppercase font-weight-bold space">Vak: <?php echo get_vak($conn, $klas)?> </h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table">
                                 <thead class="text-warning">
                                     <th>
-                                        Klas
+                                        student
                                     </th>
                                     <th>
-                                        Vak
+                                        Cijfer
                                     </th>
-                                    <th>
-                                        Bekijken
-                                    </th>
-
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $sql = "select * from cijfers_klas, klassen, vak,klas_formatie, klassen_formaties
-                                    where cijfers_klas.cf_klas=klassen.klas_id 
-                                    and klas_formatie.formatie_klas = klassen.klas_id
-                                    and  klas_formatie.formatie_id = klassen_formaties.formatie_id
-                                    and klf_stud = 2";
+                                    $sql = "select * from cijfers_klas,cijfers_student,studenten where cijfers_student.cf_klas = cijfers_klas.cf_kl and
+                                    cijfers_student.cf_student = studenten.student_nr
+                                    and cf_kl = 1";
                                     $result = $conn->query($sql);
 
                                     if ($result->num_rows > 0) {
                                         // output data of each row
                                         while ($row = $result->fetch_assoc()) {
-                                    ?>
+                                            ?>
                                             <tr>
-                                                <td><?php echo $row['klas_naam']; ?></td>
-                                                <td><?php echo $row['vak_afkorting']; ?></td>
-
-                                                <td>
-                                                    <a href="cijfer_overzicht.php?klas=<?php echo $row['cf_kl']; ?>" target="blank"><i class="material-icons">visibility</i></a>
-                                                </td>
+                                                <td><?php echo $row['student_voornaam']." ".$row['student_naam']; ?></td>
+                                                <td><?php echo $row['cf_cijfer']; ?></td>
                                             </tr>
                                     <?php
                                         }

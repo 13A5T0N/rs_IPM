@@ -112,7 +112,7 @@ include "../includes/scripts.php";
                                     </form>
                                 </div>
                             </div>
-                            <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                            <div class="tab-pane fade show" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                 <div class="modal-body">
                                     <form action="../backend/add/import_student.php" method="post" autocomplete="off" enctype="multipart/form-data">
                                         <div class="row">
