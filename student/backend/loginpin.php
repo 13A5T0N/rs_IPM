@@ -33,7 +33,7 @@ if ($status == 0) {
 } else {
 
     if (password_verify($pwd, $password)) {
-        $_SESSION["user"] = $user;
+        $_SESSION["student_nr"] = $user;
 
         if ($pwd == 'student123') {
             header("location:../reset2.php?status=0");

@@ -1,4 +1,8 @@
-<?php include "../includes/menubar_stud.php"; ?>
+<?php
+include "../../config/db_conn.php";
+include "../includes/menubar_stud.php";
+?>
+
 
 <div class="content">
     <div class="container-fluid">
@@ -55,7 +59,7 @@
                         <p class="card-category">Huidige Saldo</p>
                         <h3 class="card-title float-right">
                             <?php
-                            $result1 = mysqli_query($conn, "SELECT student_saldo from studenten WHERE student_nr = '" . $_SESSION["user"] . "'");
+                            $result1 = mysqli_query($conn, "SELECT student_saldo from studenten WHERE student_nr = '" . $_SESSION["student_nr"] . "'");
                             $data1 = mysqli_fetch_assoc($result1);
                             echo $data1['student_saldo']; ?>
                         </h3>

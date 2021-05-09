@@ -105,7 +105,7 @@
           <div id="app" class="row box">
             <div class="col-md-4 col-md-offset-4 sidebar">
               <ul>
-                <li v-if="cameras.length === 0" class="empty">No cameras found</li>
+                <!-- <li v-if="cameras.length === 0" class="empty">No cameras found</li> -->
                 <li v-for="camera in cameras">
                   <span v-if="camera.id == activeCameraId" :title="formatName(camera.name)" class="active"><input type="radio" class="align-middle mr-1" checked> {{ formatName(camera.name) }}</span>
                   <span v-if="camera.id != activeCameraId" :title="formatName(camera.name)">
